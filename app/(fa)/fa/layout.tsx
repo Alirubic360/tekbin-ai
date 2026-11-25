@@ -7,7 +7,7 @@ import "../../globals.css";
 import { site } from "@/lib/site";
 
 const title = `${site.name} — عامل‌های هوش مصنوعی و اتوماسیون`;
-const description = "Tekbin AI عامل‌های هوش مصنوعی و اتوماسیون گردش‌کار مبتنی بر n8n را برای کسب‌وکارهای در حال رشد طراحی، پیاده‌سازی و مدیریت می‌کند.";
+const description = "Tekbin AI برای کسب‌وکارهای در حال رشد عامل هوش مصنوعی و گردش‌کار n8n می‌سازد و اجرایشان را هم مدیریت می‌کند.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
