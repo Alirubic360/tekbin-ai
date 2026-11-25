@@ -47,7 +47,7 @@ lib/
 
 - Done: environment variables set, contact email set, both forms tested end to end (Web3Forms), SPF/DMARC added, AI-crawler policy configured in Cloudflare.
 - Done: the claims in `lib/content.ts` (team of specialists, five years of hands-on experience, human review before handover, the four Team areas) were confirmed by the owner. Re-confirm them whenever the team or process changes.
-- Open: have all legal text (English and Persian) reviewed by a professional.
+- Drafted: Terms and Privacy were rewritten as a business-to-business, provider-favourable but enforceable draft (`lib/legal-content.ts`, English is authoritative). Still open: have them reviewed by a qualified lawyer, including governing law/seat of arbitration (currently set through the project agreement), crypto/USDT, tax and sanctions rules in the jurisdictions involved.
 - Keep in sync: the Founding Client offer in `lib/content.ts` is limited to the first three projects; remove or update it once those are taken. Starting prices live in `lib/content.ts`.
 - Add only real results, testimonials and logos you have permission to use.
 
