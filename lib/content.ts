@@ -21,6 +21,7 @@ export type Dict = {
   hero: { badge: string; line1: string; line2: string; body: string; cta: string; secondary: string };
   services: { title: string; sub: string; items: { icon: "bot" | "workflow" | "plug" | "mail" | "chart"; title: string; body: string }[] };
   ticker: string;
+  tickerNote: string;
   process: { title: string; sub: string; steps: { title: string; body: string }[] };
   pricing: { title: string; sub: string; from: string; plans: Plan[]; customLead: string; customLink: string; customTail: string };
   faq: { title: string; items: { q: string; a: string }[] };
@@ -56,6 +57,7 @@ export const en: Dict = {
     ],
   },
   ticker: "Tools we work with",
+  tickerNote: "Names and logos belong to their respective owners and do not imply endorsement.",
   process: {
     title: "How it works",
     sub: "Everything in writing, step by step.",
@@ -138,6 +140,7 @@ export const fa: Dict = {
     ],
   },
   ticker: "ابزارهایی که با آن‌ها کار می‌کنیم",
+  tickerNote: "نام و لوگوها متعلق به صاحبان آن‌هاست و به معنای تأیید یا شراکت نیست.",
   process: {
     title: "روند کار",
     sub: "همه‌چیز مکتوب و مرحله‌به‌مرحله.",
