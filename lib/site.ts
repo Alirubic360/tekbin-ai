@@ -2,7 +2,6 @@
 export type Lang = "en" | "fa";
 
 const email = "hello@tekbin.ir";
-const mailBrief = `mailto:${email}?subject=Project%20brief`;
 
 export const site = {
   name: "Tekbin AI",
@@ -14,8 +13,8 @@ export const site = {
   briefUrl: (process.env.NEXT_PUBLIC_BRIEF_URL ?? "").trim() || "/brief",
   // Web3Forms public access key (free). Without it, the brief form falls back to the visitor's email app.
   web3formsKey: (process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "").trim(),
-  // Persian site: consultation call booking (e.g. a Cal.com link).
-  bookingUrl: (process.env.NEXT_PUBLIC_BOOKING_URL ?? "").trim() || mailBrief,
+  // Persian site: the on-site consultation request form. Override with a booking link (e.g. Cal.com) if needed.
+  bookingUrl: (process.env.NEXT_PUBLIC_BOOKING_URL ?? "").trim() || "/fa/brief",
 };
 
 export function ctaHref(lang: Lang) {
