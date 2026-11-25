@@ -3,9 +3,9 @@ import { Button } from "@/components/ui/button";
 import { site } from "@/lib/site";
 
 const links = [
-  { href: "#services", label: "Services" },
-  { href: "#stack", label: "Stack" },
-  { href: "#pricing", label: "Pricing" },
+  { href: "/#services", label: "Services" },
+  { href: "/#stack", label: "Stack" },
+  { href: "/#pricing", label: "Pricing" },
 ];
 
 export default function Navbar() {
