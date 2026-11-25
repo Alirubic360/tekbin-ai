@@ -1,19 +1,20 @@
 import type { Metadata, Viewport } from "next";
 import { GeistSans } from "geist/font/sans";
-import "./globals.css";
+import "../globals.css";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: { default: `${site.name} — AI Automation Agency`, template: `%s | ${site.name}` },
   description: site.description,
-  alternates: { canonical: "/" },
+  alternates: { canonical: "/", languages: { en: "/", fa: "/fa", "x-default": "/" } },
   openGraph: {
     title: `${site.name} — AI Automation Agency`,
     description: site.description,
     url: "/",
     siteName: site.name,
     type: "website",
+    locale: "en_US",
   },
   twitter: { card: "summary_large_image", title: site.name, description: site.description },
 };

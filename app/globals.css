@@ -23,3 +23,8 @@ html { scroll-behavior: smooth; background: var(--background); }
   html { scroll-behavior: auto; }
   .animate-marquee { animation: none !important; }
 }
+
+/* Arabic-script text must not use negative letter-spacing (it breaks letter joins). */
+[dir="rtl"] * {
+  letter-spacing: 0 !important;
+}

@@ -1,6 +1,6 @@
 # Tekbin AI
 
-Marketing site for Tekbin AI, an AI automation agency. Built with Next.js 14 (App Router), Tailwind CSS, Framer Motion and Lucide icons. Dark mode only, English.
+Marketing site for Tekbin AI, an AI automation agency. Built with Next.js 14 (App Router), Tailwind CSS, Framer Motion and Lucide icons. Dark mode only. English site at `/` and Persian (RTL) site at `/fa`.
 
 ## Getting started
 
@@ -20,7 +20,8 @@ Site-wide values live in `lib/site.ts`. Set these environment variables (see `.e
 | Variable | Purpose |
 | --- | --- |
 | `NEXT_PUBLIC_SITE_URL` | Canonical site URL, used for metadata, sitemap and robots |
-| `NEXT_PUBLIC_BOOKING_URL` | Where the "Book a Consultation" buttons point (e.g. a Cal.com link) |
+| `NEXT_PUBLIC_BRIEF_URL` | English site: where "Send Your Project Brief" points (a Tally/Google Form link, or a `mailto:` link) |
+| `NEXT_PUBLIC_BOOKING_URL` | Persian site: where "رزرو مشاوره" points (e.g. a Cal.com link) |
 
 The contact email is set in `lib/site.ts`.
 
@@ -28,23 +29,24 @@ The contact email is set in `lib/site.ts`.
 
 ```
 app/
-  layout.tsx            Root layout, fonts, metadata
-  page.tsx              Home page
+  (en)/                 English site: layout, home page, /privacy, /terms, 404
+  (fa)/fa/              Persian site (RTL): layout and home page
   opengraph-image.tsx   Generated Open Graph image (1200x630)
   robots.ts, sitemap.ts
 components/
   Navbar, Hero, TechTicker, Services, Pricing, Footer, Reveal
   ui/button.tsx         shadcn-style button
 lib/
-  site.ts               Site config
+  site.ts               Site config and CTA links
+  content.ts            All page copy, English and Persian
   utils.ts              cn() helper
 ```
 
 ## Before launch
 
 - Set the environment variables above and replace the placeholder email in `lib/site.ts`.
-- Confirm the pricing and plan features in `components/Pricing.tsx` (starting prices; the Founding Client offer is limited to the first three projects and must be removed or updated once those are taken).
-- Add Privacy and Terms pages.
+- Confirm the pricing and plan features in `components/Pricing.tsx` (starting prices; the Founding Client offer in `lib/content.ts` is limited to the first three projects and must be removed or updated once those are taken).
+- Persian pages link to the English Privacy and Terms; add Persian versions if needed, and have all legal text reviewed.
 - Add only real results, testimonials and logos you have permission to use.
 
 ## Deployment (Cloudflare Pages)
