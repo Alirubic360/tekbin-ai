@@ -45,10 +45,10 @@ lib/
 
 ## Before launch
 
-- Set the environment variables above and replace the placeholder email in `lib/site.ts`.
-- Confirm the pricing and plan features in `components/Pricing.tsx` (starting prices; the Founding Client offer in `lib/content.ts` is limited to the first three projects and must be removed or updated once those are taken).
-- Have all legal text (English and Persian) reviewed.
-- Confirm the claims in `lib/content.ts` (About: "a team of specialists ... led by a specialist with five years of hands-on experience"; FAQ: "a person reviews and tests every workflow before handover") are true for how you actually work, and that the four areas in the Team section (`team` in `lib/content.ts`) match how your team is organised.
+- Done: environment variables set, contact email set, both forms tested end to end (Web3Forms), SPF/DMARC added, AI-crawler policy configured in Cloudflare.
+- Done: the claims in `lib/content.ts` (team of specialists, five years of hands-on experience, human review before handover, the four Team areas) were confirmed by the owner. Re-confirm them whenever the team or process changes.
+- Open: have all legal text (English and Persian) reviewed by a professional.
+- Keep in sync: the Founding Client offer in `lib/content.ts` is limited to the first three projects; remove or update it once those are taken. Starting prices live in `lib/content.ts`.
 - Add only real results, testimonials and logos you have permission to use.
 
 ## Deployment (Cloudflare Pages)
