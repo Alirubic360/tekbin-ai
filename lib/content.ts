@@ -94,7 +94,7 @@ export const en: Dict = {
   },
   about: {
     title: "About Tekbin AI",
-    body: "Tekbin AI is an independent studio led by a specialist with five years of hands-on experience in automation and AI agent management. We build and run AI agents and workflow automation for small and growing businesses. Clear scope, written agreements, tested handover.",
+    body: "Tekbin AI is a team of specialists in automation and AI agent management, led by a specialist with five years of hands-on experience. We build and run AI agents and workflow automation for small and growing businesses. Clear scope, written agreements, tested handover.",
     points: ["Fixed scope and price, in writing", "Every workflow tested before handover", "Logging, error handling and human approval built in"],
   },
   footer: { rights: "All rights reserved.", services: "Services", pricing: "Pricing", privacy: "Privacy", terms: "Terms", contact: "Contact", privacyHref: "/privacy", termsHref: "/terms" },
@@ -166,7 +166,7 @@ export const fa: Dict = {
   },
   about: {
     title: "درباره‌ی Tekbin AI",
-    body: "Tekbin AI یک استودیوی مستقل است که زیر نظر یک متخصص با پنج سال سابقه‌ی عملی در اتوماسیون و مدیریت عامل‌های هوش مصنوعی فعالیت می‌کند. ما برای کسب‌وکارهای کوچک و در حال رشد عامل هوش مصنوعی و اتوماسیون می‌سازیم و اجرا می‌کنیم. محدوده‌ی روشن، توافق مکتوب، تحویل آزمایش‌شده.",
+    body: "Tekbin AI تیمی از متخصصان اتوماسیون و مدیریت عامل‌های هوش مصنوعی است، با رهبری یک متخصص با پنج سال سابقه‌ی عملی. ما برای کسب‌وکارهای کوچک و در حال رشد عامل هوش مصنوعی و اتوماسیون می‌سازیم و اجرا می‌کنیم. محدوده‌ی روشن، توافق مکتوب، تحویل آزمایش‌شده.",
     points: ["محدوده و قیمت ثابت، مکتوب", "هر گردش‌کار پیش از تحویل آزمایش می‌شود", "لاگ، مدیریت خطا و تأیید انسانی از ابتدا"],
   },
   footer: { rights: "همه‌ی حقوق محفوظ است.", services: "خدمات", pricing: "قیمت‌ها", privacy: "حریم خصوصی", terms: "شرایط استفاده", contact: "تماس", privacyHref: "/fa/privacy", termsHref: "/fa/terms" },
