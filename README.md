@@ -43,7 +43,7 @@ lib/
 ## Before launch
 
 - Set the environment variables above and replace the placeholder email in `lib/site.ts`.
-- Confirm the pricing and plan features in `components/Pricing.tsx` (they are placeholders).
+- Confirm the pricing and plan features in `components/Pricing.tsx` (starting prices; the Founding Client offer is limited to the first three projects and must be removed or updated once those are taken).
 - Add Privacy and Terms pages.
 - Add only real results, testimonials and logos you have permission to use.
 
