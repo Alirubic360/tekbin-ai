@@ -1,6 +1,6 @@
 # Tekbin AI
 
-Marketing site for Tekbin AI, an AI automation agency. Built with Next.js 14 (App Router), Tailwind CSS, Framer Motion and Lucide icons. Dark mode only. English site at `/` and Persian (RTL) site at `/fa`.
+Marketing site for Tekbin AI, an AI automation agency. Built with Next.js 16 (App Router), Tailwind CSS, Framer Motion and Lucide icons. Dark mode only. English site at `/` and Persian (RTL) site at `/fa`.
 
 ## Getting started
 
@@ -11,7 +11,7 @@ npm run build      # production build
 npm run lint
 ```
 
-Requires Node.js 18.17 or newer.
+Requires Node.js 20.9 or newer (set `NODE_VERSION=20` or higher on the host).
 
 ## Configuration
 
