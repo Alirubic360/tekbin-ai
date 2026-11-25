@@ -46,7 +46,7 @@ export default function BriefPage() {
               </li>
             ))}
           </ol>
-          <p className="mt-10 text-xs leading-relaxed text-white/40">
+          <p className="mt-10 text-xs leading-relaxed text-white/55">
             Please do not include passwords, API keys or other secrets in this form. We will agree on access separately.
           </p>
         </div>

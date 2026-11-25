@@ -29,9 +29,9 @@ export default function TechTicker({ t }: { t: Dict }) {
   const row = [...tools, ...tools];
   return (
     <section id="stack" aria-label={t.ticker} className="scroll-mt-20 border-y border-white/10 py-10">
-      <p className="mb-6 text-center text-xs uppercase tracking-[0.2em] text-white/40">{t.ticker}</p>
+      <p className="mb-6 text-center text-xs uppercase tracking-[0.2em] text-white/55">{t.ticker}</p>
       <div dir="ltr" className="marquee-mask overflow-hidden">
-        <ul className="animate-marquee flex w-max gap-12 pr-12 text-lg font-medium text-white/45">
+        <ul className="animate-marquee flex w-max gap-12 pr-12 text-lg font-medium text-white/55">
           {row.map((tool, i) => (
             <li key={`${tool.name}-${i}`} aria-hidden={i >= tools.length} className="flex items-center gap-2.5">
               {tool.path ? (
@@ -46,7 +46,7 @@ export default function TechTicker({ t }: { t: Dict }) {
           ))}
         </ul>
       </div>
-      <p className="mt-6 px-6 text-center text-xs text-white/30">{t.tickerNote}</p>
+      <p className="mt-6 px-6 text-center text-xs text-white/55">{t.tickerNote}</p>
     </section>
   );
 }

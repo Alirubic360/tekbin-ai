@@ -27,7 +27,7 @@ const chevron =
   "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23ffffff99' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E\")";
 
 const field =
-  "w-full rounded-lg border border-white/10 bg-white/[0.03] px-3.5 py-2.5 text-sm text-white placeholder:text-white/30 transition-colors focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30";
+  "w-full rounded-lg border border-white/10 bg-white/[0.03] px-3.5 py-2.5 text-sm text-white placeholder:text-white/55 transition-colors focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30";
 
 function Label({ htmlFor, children, required }: { htmlFor: string; children: React.ReactNode; required?: boolean }) {
   return (
@@ -237,14 +237,14 @@ export default function BriefForm() {
           <input type="checkbox" required className="mt-1 h-4 w-4 shrink-0 accent-[#0070f3]" />
           <span>
             I agree that Tekbin AI may use these details to reply to my brief, as described in the{" "}
-            <a href="/privacy" className="text-accent hover:underline">Privacy Policy</a>.
+            <a href="/privacy" className="text-[#4da3ff] underline underline-offset-2">Privacy Policy</a>.
           </span>
         </label>
         <div className="flex flex-wrap items-center gap-4">
           <Button type="submit" size="lg" disabled={status === "sending"}>
             {status === "sending" ? (<><Loader2 size={18} className="animate-spin" /> Sending</>) : (<>Send brief <ArrowRight size={18} /></>)}
           </Button>
-          <p className="text-xs text-white/40">No account needed. We reply in writing.</p>
+          <p className="text-xs text-white/55">No account needed. We reply in writing.</p>
         </div>
         {status === "error" && (
           <p role="alert" className="text-sm text-red-400">

@@ -31,7 +31,7 @@ export default function Pricing({ t }: { t: Dict }) {
                 <span
                   className={cn(
                     "absolute -top-3 start-8 rounded-full border bg-background px-3 py-0.5 text-xs",
-                    plan.kind === "featured" ? "border-accent/60 text-accent" : "border-white/25 text-white/70"
+                    plan.kind === "featured" ? "border-accent/60 text-[#4da3ff]" : "border-white/25 text-white/70"
                   )}
                 >
                   {plan.tag}
@@ -61,7 +61,7 @@ export default function Pricing({ t }: { t: Dict }) {
       <Reveal delay={0.1}>
         <p className="mt-10 text-sm text-white/50">
           {p.customLead}{" "}
-          <a href={href} className="text-accent hover:underline">
+          <a href={href} className="text-[#4da3ff] underline underline-offset-2">
             {p.customLink}
           </a>{" "}
           {p.customTail}
