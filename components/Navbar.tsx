@@ -1,15 +1,15 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ctaHref } from "@/lib/site";
-import { site } from "@/lib/site";
+import { ctaHref, site } from "@/lib/site";
 import { en, type Dict } from "@/lib/content";
 
-export default function Navbar({ t = en }: { t?: Dict }) {
-  const base = t.lang === "fa" ? "/fa" : "";
+export default function Navbar({ t = en, switchHref }: { t?: Dict; switchHref?: string }) {
+  const base = t.lang === "fa" ? "/fa#" : "/#";
   const links = [
-    { href: `${base}/#services`.replace("//", "/"), label: t.nav.services },
-    { href: `${base}/#stack`.replace("//", "/"), label: t.nav.stack },
-    { href: `${base}/#pricing`.replace("//", "/"), label: t.nav.pricing },
+    { href: `${base}services`, label: t.nav.services },
+    { href: `${base}process`, label: t.nav.process },
+    { href: `${base}pricing`, label: t.nav.pricing },
+    { href: `${base}faq`, label: t.nav.faq },
   ];
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-background/60 backdrop-blur-xl">
@@ -28,7 +28,7 @@ export default function Navbar({ t = en }: { t?: Dict }) {
           ))}
         </ul>
         <div className="flex items-center gap-3">
-          <Link href={t.switchHref} hrefLang={t.lang === "fa" ? "en" : "fa"} className="text-sm text-white/60 transition-colors hover:text-white">
+          <Link href={switchHref ?? t.switchHref} hrefLang={t.lang === "fa" ? "en" : "fa"} className="text-sm text-white/60 transition-colors hover:text-white">
             {t.switchLabel}
           </Link>
           <Button asChild size="sm">

@@ -5,12 +5,12 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Terms of Service",
   description: `Terms for using the ${site.name} website and services.`,
-  alternates: { canonical: "/terms" },
+  alternates: { canonical: "/terms", languages: { en: "/terms", fa: "/fa/terms" } },
 };
 
 export default function TermsPage() {
   return (
-    <LegalPage title="Terms of Service" updated="November 25, 2026">
+    <LegalPage switchHref="/fa/terms" title="Terms of Service" updated="November 25, 2026">
       <section>
         <p>
           These terms apply to your use of {site.url.replace("https://", "")} and to our general

@@ -5,12 +5,12 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: `How ${site.name} collects and uses personal information.`,
-  alternates: { canonical: "/privacy" },
+  alternates: { canonical: "/privacy", languages: { en: "/privacy", fa: "/fa/privacy" } },
 };
 
 export default function PrivacyPage() {
   return (
-    <LegalPage title="Privacy Policy" updated="November 25, 2026">
+    <LegalPage switchHref="/fa/privacy" title="Privacy Policy" updated="November 25, 2026">
       <section>
         <p>
           This policy explains what personal information {site.name} (&ldquo;we&rdquo;, &ldquo;us&rdquo;)
