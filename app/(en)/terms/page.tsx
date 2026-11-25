@@ -34,6 +34,15 @@ export default function TermsPage() {
         </p>
       </section>
       <section>
+        <h2>Payments</h2>
+        <p>
+          Prices are quoted in USD and paid in USDT on the network stated in the invoice. Crypto transfers are
+          generally irreversible, so scope and price are agreed in writing before payment. You are responsible
+          for network fees and for sending funds to the exact address on the invoice. Payment stages, refunds
+          and cancellation terms for a project are set in its written agreement.
+        </p>
+      </section>
+      <section>
         <h2>No guaranteed results</h2>
         <p>
           Automation outcomes depend on your data, tools, processes and how the system is used. We do not

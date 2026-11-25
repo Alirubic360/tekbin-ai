@@ -22,6 +22,7 @@ export default function PrivacyPage() {
         <h2>Information we collect</h2>
         <ul>
           <li><strong>Information you send us.</strong> If you email us or book a consultation, we receive details you provide, such as your name, email address, company and the project you describe.</li>
+          <li><strong>Payment data.</strong> If you pay in USDT, transaction details such as wallet addresses and amounts are recorded on a public blockchain. We cannot alter or delete them.</li>
           <li><strong>Technical data.</strong> Our hosting provider and any analytics tool we enable may process data such as IP address, browser type, device, pages viewed and referring page.</li>
         </ul>
         <p className="mt-3">This website does not require an account and does not sell products directly.</p>
