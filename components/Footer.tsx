@@ -12,6 +12,7 @@ export default function Footer({ t = en }: { t?: Dict }) {
           <a href={`${base}pricing`} className="hover:text-white">{t.footer.pricing}</a>
           <a href={t.footer.privacyHref} className="hover:text-white">{t.footer.privacy}</a>
           <a href={t.footer.termsHref} className="hover:text-white">{t.footer.terms}</a>
+          <a href={t.footer.legalHref} className="hover:text-white">{t.footer.legal}</a>
           <a href={`mailto:${site.email}`} className="hover:text-white">{t.footer.contact}</a>
         </nav>
       </div>

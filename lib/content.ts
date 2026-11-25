@@ -27,7 +27,7 @@ export type Dict = {
   faq: { title: string; items: { q: string; a: string }[] };
   team: { title: string; sub: string; roles: { icon: "bot" | "workflow" | "activity" | "message"; title: string; body: string }[] };
   about: { title: string; body: string; points: string[] };
-  footer: { rights: string; services: string; pricing: string; privacy: string; terms: string; contact: string; privacyHref: string; termsHref: string };
+  footer: { rights: string; services: string; pricing: string; privacy: string; terms: string; legal: string; contact: string; privacyHref: string; termsHref: string; legalHref: string };
 };
 
 export const en: Dict = {
@@ -110,7 +110,7 @@ export const en: Dict = {
     body: "Tekbin AI is a team of specialists in automation and AI agent management, led by someone with five years of hands-on experience. We build and run AI agents and workflow automation for small and growing businesses: clear scope, written agreements, tested handover.",
     points: ["Fixed scope and price, in writing", "Every workflow tested before handover", "Logging, error handling and human approval built in"],
   },
-  footer: { rights: "All rights reserved.", services: "Services", pricing: "Pricing", privacy: "Privacy", terms: "Terms", contact: "Contact", privacyHref: "/privacy", termsHref: "/terms" },
+  footer: { rights: "All rights reserved.", services: "Services", pricing: "Pricing", privacy: "Privacy", terms: "Terms", legal: "Legal", contact: "Contact", privacyHref: "/privacy", termsHref: "/terms", legalHref: "/legal" },
 };
 
 export const fa: Dict = {
@@ -193,7 +193,7 @@ export const fa: Dict = {
     body: "Tekbin AI تیمی از متخصصان اتوماسیون و مدیریت عامل‌های هوش مصنوعی است، با رهبری کسی که پنج سال تجربه‌ی عملی در این کار دارد. برای کسب‌وکارهای کوچک و در حال رشد عامل هوش مصنوعی و اتوماسیون می‌سازیم و اجرا می‌کنیم؛ با محدوده‌ی روشن، توافق مکتوب و تحویل آزمایش‌شده.",
     points: ["محدوده و قیمت ثابت، مکتوب", "هر گردش‌کار قبل از تحویل آزمایش می‌شود", "لاگ، مدیریت خطا و تأیید انسانی از همان ابتدا"],
   },
-  footer: { rights: "همه‌ی حقوق محفوظ است.", services: "خدمات", pricing: "قیمت‌ها", privacy: "حریم خصوصی", terms: "شرایط استفاده", contact: "تماس", privacyHref: "/fa/privacy", termsHref: "/fa/terms" },
+  footer: { rights: "همه‌ی حقوق محفوظ است.", services: "خدمات", pricing: "قیمت‌ها", privacy: "حریم خصوصی", terms: "شرایط استفاده", legal: "اسناد حقوقی", contact: "تماس", privacyHref: "/fa/privacy", termsHref: "/fa/terms", legalHref: "/fa/legal" },
 };
 
 export const dicts: Record<Lang, Dict> = { en, fa };
