@@ -8,7 +8,7 @@ export const site = {
   name: "Tekbin AI",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://tekbin.ir",
   description:
-    "Tekbin AI designs and builds custom AI automation workflows for growing businesses.",
+    "Tekbin AI designs, builds and manages AI agents and n8n workflow automation for growing businesses.",
   email,
   // English site: written project brief (form link such as Tally/Google Forms, or mailto:).
   briefUrl: process.env.NEXT_PUBLIC_BRIEF_URL || mailBrief,

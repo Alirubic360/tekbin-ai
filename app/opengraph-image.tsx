@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Tekbin AI — AI Automation Agency";
+export const alt = "Tekbin AI — AI Agents & Automation";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -40,14 +40,14 @@ export default function OpengraphImage() {
           Tekbin AI
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ fontSize: 92, fontWeight: 700, lineHeight: 1.05, letterSpacing: -2 }}>
-            Automate the work.
+          <div style={{ fontSize: 80, fontWeight: 700, lineHeight: 1.05, letterSpacing: -2 }}>
+            AI agents and automation,
           </div>
-          <div style={{ fontSize: 92, fontWeight: 700, lineHeight: 1.05, letterSpacing: -2, color: "#3b94ff" }}>
-            Keep the growth.
+          <div style={{ fontSize: 80, fontWeight: 700, lineHeight: 1.05, letterSpacing: -2, color: "#3b94ff" }}>
+            built, monitored, managed.
           </div>
           <div style={{ marginTop: 28, fontSize: 30, color: "rgba(255,255,255,0.6)" }}>
-            Custom AI automation for growing businesses
+            Agent development, management and n8n workflows
           </div>
         </div>
       </div>

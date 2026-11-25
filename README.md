@@ -47,7 +47,7 @@ lib/
 - Set the environment variables above and replace the placeholder email in `lib/site.ts`.
 - Confirm the pricing and plan features in `components/Pricing.tsx` (starting prices; the Founding Client offer in `lib/content.ts` is limited to the first three projects and must be removed or updated once those are taken).
 - Have all legal text (English and Persian) reviewed.
-- Confirm the claims in `lib/content.ts` (About: "five years of professional experience"; FAQ: "a person reviews and tests every workflow before handover") are true for how you actually work.
+- Confirm the claims in `lib/content.ts` (About: "five years of hands-on experience in automation and AI agent management"; FAQ: "a person reviews and tests every workflow before handover") are true for how you actually work.
 - Add only real results, testimonials and logos you have permission to use.
 
 ## Deployment (Cloudflare Pages)

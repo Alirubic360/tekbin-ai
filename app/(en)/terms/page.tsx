@@ -28,7 +28,7 @@ export default function TermsPage() {
       <section>
         <h2>Services</h2>
         <p>
-          We design and build AI automation workflows and integrations. Each project&rsquo;s deliverables,
+          We design and build AI agents, workflow automation and integrations, and, where agreed, manage them after launch. Each project&rsquo;s deliverables,
           timeline, fees and support period are defined in its written scope. Work outside that scope is
           quoted separately.
         </p>
