@@ -47,6 +47,14 @@ lib/
 - Add Privacy and Terms pages.
 - Add only real results, testimonials and logos you have permission to use.
 
-## Deployment
+## Deployment (Cloudflare Pages)
 
-Deploy on any Next.js-capable host. On Vercel, import the repository and add the environment variables. Note that Vercel's free Hobby plan is for non-commercial use; a commercial agency site needs a paid plan or another host.
+The site is a static export (`output: "export"` in `next.config.mjs`); the build output is the `out/` folder.
+Security and cache headers are defined in `public/_headers`.
+
+1. In Cloudflare, go to Workers & Pages, create a Pages project and connect this GitHub repository.
+2. Build settings: framework preset **Next.js (Static HTML Export)**, build command `npm run build`, output directory `out`.
+3. Add the environment variables `NEXT_PUBLIC_SITE_URL` and `NEXT_PUBLIC_BOOKING_URL` (and, if needed, `NODE_VERSION=20`).
+4. Under the project's Custom domains, add the domain and create the DNS records Cloudflare shows.
+
+Every push to `main` redeploys automatically. Review Cloudflare's current terms and plan limits before relying on it commercially.
