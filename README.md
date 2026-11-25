@@ -51,6 +51,13 @@ lib/
 - Keep in sync: the Founding Client offer in `lib/content.ts` is limited to the first three projects; remove or update it once those are taken. Starting prices live in `lib/content.ts`.
 - Add only real results, testimonials and logos you have permission to use.
 
+## Legal documents (status: draft)
+
+- Public texts (Terms, Privacy, legal index) live in `lib/legal-content.ts` and render at `/terms`, `/privacy`, `/legal` and the `/fa/` equivalents. Both languages must keep the same clause structure.
+- Pages show a "Draft: under legal review" banner (`LEGAL_STATUS_*`). Remove it only after the owner's legal identity, governing law and a lawyer's review are done.
+- Contract templates and legal working notes are kept **outside this repository** (a git-ignored local folder). Do not commit them or any owner-specific legal data here: the repository may be public.
+- The Privacy Policy must match the real implementation. Re-check it whenever analytics, forms or Cloudflare settings change (currently: Cloudflare Web Analytics, Cloudflare hosting/DNS/email routing, Gmail, Web3Forms).
+
 ## Deployment (Cloudflare Pages)
 
 The site is a static export (`output: "export"` in `next.config.mjs`); the build output is the `out/` folder.
