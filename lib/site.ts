@@ -1,7 +1,7 @@
 // Central site config. Replace placeholders before launch.
 export type Lang = "en" | "fa";
 
-const email = "hello@example.com";
+const email = "hello@tekbin.ir";
 const mailBrief = `mailto:${email}?subject=Project%20brief`;
 
 export const site = {
