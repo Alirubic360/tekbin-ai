@@ -191,12 +191,12 @@ export const privacyEn: { intro: string; clauses: Clause[] } = {
         "To establish, exercise or defend legal claims (legitimate interests).",
         "Where the law requires it, on your consent, which you can withdraw at any time without affecting earlier processing.",
       ],
-      body: ["We do not sell personal data, and we do not use it for advertising profiling. This website does not use analytics or advertising cookies."],
+      body: ["We do not sell personal data, and we do not use it for advertising profiling. This website sets no cookies of its own and uses no advertising or cross-site tracking tools. It does use Cloudflare Web Analytics, a measurement service designed to work without cookies, to see aggregate page views and performance; Cloudflare also processes request data to deliver and protect the site."],
     },
     {
       title: "Who we share it with",
       body: [
-        "We share personal data only with service providers that help us operate, under their own terms and appropriate safeguards, and only as needed: hosting, DNS, email routing and security (Cloudflare), email (Google Gmail), form delivery (Web3Forms), scheduling tools if we enable them, and the automation, AI-model and API providers a client’s project uses, as listed in the project agreement.",
+        "We share personal data only with service providers that help us operate, under their own terms and appropriate safeguards, and only as needed: hosting, DNS, email routing, security and web analytics (Cloudflare), email (Google Gmail), form delivery (Web3Forms), scheduling tools if we enable them, and the automation, AI-model and API providers a client’s project uses, as listed in the project agreement.",
         "We may also disclose data to professional advisers, to comply with law or a valid legal request, to protect rights and safety, or in a business transfer, where the recipient is bound to protect it.",
       ],
     },
@@ -431,12 +431,12 @@ export const privacyFa: { intro: string; clauses: Clause[] } = {
         "برای اثبات، اعمال یا دفاع از ادعاهای حقوقی (منافع مشروع).",
         "در جایی که قانون الزام کند، بر مبنای رضایت شما، که هر زمان می‌توانید آن را پس بگیرید بدون اینکه بر پردازش‌های پیشین اثر بگذارد.",
       ],
-      body: ["ما داده‌ی شخصی را نمی‌فروشیم و برای پروفایل‌سازی تبلیغاتی به کار نمی‌بریم. این وب‌سایت از ابزار آمار یا کوکی تبلیغاتی استفاده نمی‌کند."],
+      body: ["ما داده‌ی شخصی را نمی‌فروشیم و برای پروفایل‌سازی تبلیغاتی به کار نمی‌بریم. این وب‌سایت کوکی اختصاصی نمی‌گذارد و از ابزار تبلیغاتی یا ردیابی بین‌سایتی استفاده نمی‌کند. از Cloudflare Web Analytics، سرویس اندازه‌گیری‌ای که برای کار بدون کوکی طراحی شده، برای دیدن آمار کلی بازدید و عملکرد استفاده می‌کند؛ Cloudflare همچنین داده‌ی درخواست را برای ارائه و محافظت از سایت پردازش می‌کند."],
     },
     {
       title: "با چه کسانی به اشتراک می‌گذاریم",
       body: [
-        "داده‌ی شخصی را فقط با ارائه‌دهندگانی که در اجرای کار به ما کمک می‌کنند، تحت شرایط خودشان و با تضمین‌های مناسب و فقط در حد نیاز به اشتراک می‌گذاریم: هاستینگ، DNS، مسیریابی ایمیل و امنیت (Cloudflare)، ایمیل (Google Gmail)، تحویل فرم (Web3Forms)، ابزار زمان‌بندی در صورت فعال‌سازی، و ارائه‌دهندگان اتوماسیون، مدل هوش مصنوعی و API که پروژه‌ی یک مشتری استفاده می‌کند، آن‌گونه که در توافق پروژه آمده.",
+        "داده‌ی شخصی را فقط با ارائه‌دهندگانی که در اجرای کار به ما کمک می‌کنند، تحت شرایط خودشان و با تضمین‌های مناسب و فقط در حد نیاز به اشتراک می‌گذاریم: هاستینگ، DNS، مسیریابی ایمیل، امنیت و آمار وب (Cloudflare)، ایمیل (Google Gmail)، تحویل فرم (Web3Forms)، ابزار زمان‌بندی در صورت فعال‌سازی، و ارائه‌دهندگان اتوماسیون، مدل هوش مصنوعی و API که پروژه‌ی یک مشتری استفاده می‌کند، آن‌گونه که در توافق پروژه آمده.",
         "همچنین ممکن است داده را با مشاوران حرفه‌ای، برای رعایت قانون یا درخواست قانونی معتبر، برای حفاظت از حقوق و ایمنی، یا در انتقال کسب‌وکار، به گیرنده‌ای که ملزم به حفاظت از آن است، افشا کنیم.",
       ],
     },

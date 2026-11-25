@@ -146,7 +146,7 @@ For website visitors, enquiries and our own business records, Tekbin AI is the c
 
 ### 3. Why we use it and on what basis
 
-We do not sell personal data, and we do not use it for advertising profiling. This website does not use analytics or advertising cookies.
+We do not sell personal data, and we do not use it for advertising profiling. This website sets no cookies of its own and uses no advertising or cross-site tracking tools. It does use Cloudflare Web Analytics, a measurement service designed to work without cookies, to see aggregate page views and performance; Cloudflare also processes request data to deliver and protect the site.
 
 - To answer enquiries, prepare proposals and take steps before and under a contract (contract or pre-contract steps).
 - To deliver, secure, support and improve the website and services, and to keep business, accounting and tax records (legitimate interests and legal obligations).
@@ -155,7 +155,7 @@ We do not sell personal data, and we do not use it for advertising profiling. Th
 
 ### 4. Who we share it with
 
-We share personal data only with service providers that help us operate, under their own terms and appropriate safeguards, and only as needed: hosting, DNS, email routing and security (Cloudflare), email (Google Gmail), form delivery (Web3Forms), scheduling tools if we enable them, and the automation, AI-model and API providers a client’s project uses, as listed in the project agreement.
+We share personal data only with service providers that help us operate, under their own terms and appropriate safeguards, and only as needed: hosting, DNS, email routing, security and web analytics (Cloudflare), email (Google Gmail), form delivery (Web3Forms), scheduling tools if we enable them, and the automation, AI-model and API providers a client’s project uses, as listed in the project agreement.
 
 We may also disclose data to professional advisers, to comply with law or a valid legal request, to protect rights and safety, or in a business transfer, where the recipient is bound to protect it.
 
@@ -334,7 +334,7 @@ We may update this policy; the date above shows the latest version, and we will 
 
 ### 3. چرا و بر چه مبنایی استفاده می‌کنیم
 
-ما داده‌ی شخصی را نمی‌فروشیم و برای پروفایل‌سازی تبلیغاتی به کار نمی‌بریم. این وب‌سایت از ابزار آمار یا کوکی تبلیغاتی استفاده نمی‌کند.
+ما داده‌ی شخصی را نمی‌فروشیم و برای پروفایل‌سازی تبلیغاتی به کار نمی‌بریم. این وب‌سایت کوکی اختصاصی نمی‌گذارد و از ابزار تبلیغاتی یا ردیابی بین‌سایتی استفاده نمی‌کند. از Cloudflare Web Analytics، سرویس اندازه‌گیری‌ای که برای کار بدون کوکی طراحی شده، برای دیدن آمار کلی بازدید و عملکرد استفاده می‌کند؛ Cloudflare همچنین داده‌ی درخواست را برای ارائه و محافظت از سایت پردازش می‌کند.
 
 - برای پاسخ به درخواست‌ها، تهیه‌ی پیشنهاد و اقدام‌های پیش از قرارداد و در چارچوب قرارداد (مبنای قرارداد یا مقدمات قرارداد).
 - برای ارائه، حفظ امنیت، پشتیبانی و بهبود وب‌سایت و خدمات، و نگهداری سوابق کسب‌وکار، حسابداری و مالیات (منافع مشروع و تعهدات قانونی).
@@ -343,7 +343,7 @@ We may update this policy; the date above shows the latest version, and we will 
 
 ### 4. با چه کسانی به اشتراک می‌گذاریم
 
-داده‌ی شخصی را فقط با ارائه‌دهندگانی که در اجرای کار به ما کمک می‌کنند، تحت شرایط خودشان و با تضمین‌های مناسب و فقط در حد نیاز به اشتراک می‌گذاریم: هاستینگ، DNS، مسیریابی ایمیل و امنیت (Cloudflare)، ایمیل (Google Gmail)، تحویل فرم (Web3Forms)، ابزار زمان‌بندی در صورت فعال‌سازی، و ارائه‌دهندگان اتوماسیون، مدل هوش مصنوعی و API که پروژه‌ی یک مشتری استفاده می‌کند، آن‌گونه که در توافق پروژه آمده.
+داده‌ی شخصی را فقط با ارائه‌دهندگانی که در اجرای کار به ما کمک می‌کنند، تحت شرایط خودشان و با تضمین‌های مناسب و فقط در حد نیاز به اشتراک می‌گذاریم: هاستینگ، DNS، مسیریابی ایمیل، امنیت و آمار وب (Cloudflare)، ایمیل (Google Gmail)، تحویل فرم (Web3Forms)، ابزار زمان‌بندی در صورت فعال‌سازی، و ارائه‌دهندگان اتوماسیون، مدل هوش مصنوعی و API که پروژه‌ی یک مشتری استفاده می‌کند، آن‌گونه که در توافق پروژه آمده.
 
 همچنین ممکن است داده را با مشاوران حرفه‌ای، برای رعایت قانون یا درخواست قانونی معتبر، برای حفاظت از حقوق و ایمنی، یا در انتقال کسب‌وکار، به گیرنده‌ای که ملزم به حفاظت از آن است، افشا کنیم.
 
