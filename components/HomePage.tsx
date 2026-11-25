@@ -5,6 +5,7 @@ import Services from "@/components/Services";
 import Process from "@/components/Process";
 import Pricing from "@/components/Pricing";
 import Faq from "@/components/Faq";
+import Team from "@/components/Team";
 import About from "@/components/About";
 import Footer from "@/components/Footer";
 import { dicts } from "@/lib/content";
@@ -22,6 +23,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
         <Process t={t} />
         <Pricing t={t} />
         <Faq t={t} />
+        <Team t={t} />
         <About t={t} />
       </main>
       <Footer t={t} />

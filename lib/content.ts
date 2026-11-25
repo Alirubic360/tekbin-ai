@@ -24,6 +24,7 @@ export type Dict = {
   process: { title: string; sub: string; steps: { title: string; body: string }[] };
   pricing: { title: string; sub: string; from: string; plans: Plan[]; customLead: string; customLink: string; customTail: string };
   faq: { title: string; items: { q: string; a: string }[] };
+  team: { title: string; sub: string; roles: { icon: "bot" | "workflow" | "activity" | "message"; title: string; body: string }[] };
   about: { title: string; body: string; points: string[] };
   footer: { rights: string; services: string; pricing: string; privacy: string; terms: string; contact: string; privacyHref: string; termsHref: string };
 };
@@ -90,6 +91,16 @@ export const en: Dict = {
       { q: "What happens to my data and accounts?", a: "We only ask for the access a project needs, ideally through limited accounts you can revoke any time. What we can access and how we use it is agreed in writing. See the Privacy Policy." },
       { q: "Do you use AI to do the work?", a: "Yes. We use AI tools, and a person reviews and tests every workflow before handover." },
       { q: "What if my project is bigger than Pro?", a: "Send the brief anyway. We'll quote it, or tell you plainly if it's not a good fit." },
+    ],
+  },
+  team: {
+    title: "The team",
+    sub: "The areas of expertise behind every project.",
+    roles: [
+      { icon: "bot", title: "Agent engineering", body: "Designs agents, their tools, limits and handoffs to people." },
+      { icon: "workflow", title: "Automation and integrations", body: "Builds n8n workflows and connects your tools through APIs and webhooks." },
+      { icon: "activity", title: "Agent operations", body: "Monitors runs, reviews logs and output quality, tunes prompts and models, tracks costs." },
+      { icon: "message", title: "Delivery and communication", body: "Scopes the work, writes the proposal and keeps you updated in writing." },
     ],
   },
   about: {
@@ -162,6 +173,16 @@ export const fa: Dict = {
       { q: "داده‌ها و حساب‌های من چه می‌شود؟", a: "فقط دسترسی‌ای را می‌خواهیم که پروژه لازم دارد، ترجیحاً با حساب‌های محدودی که هر زمان بتوانید لغو کنید. اینکه به چه چیزی دسترسی داریم و چطور استفاده می‌کنیم، مکتوب توافق می‌شود. جزئیات در سیاست حریم خصوصی هست." },
       { q: "از هوش مصنوعی برای کار استفاده می‌کنید؟", a: "بله. از ابزارهای هوش مصنوعی استفاده می‌کنیم و هر گردش‌کار پیش از تحویل توسط یک انسان بررسی و آزمایش می‌شود." },
       { q: "اگر پروژه‌ام از Pro بزرگ‌تر باشد؟", a: "باز هم توضیحش را بفرستید. قیمت می‌دهیم، یا اگر مناسب نبود، صریح می‌گوییم." },
+    ],
+  },
+  team: {
+    title: "تیم",
+    sub: "حوزه‌های تخصصی‌ای که پشت هر پروژه هستند.",
+    roles: [
+      { icon: "bot", title: "مهندسی عامل‌ها", body: "طراحی عامل‌ها، ابزارها، محدودیت‌ها و نقطه‌های تحویل به انسان." },
+      { icon: "workflow", title: "اتوماسیون و یکپارچه‌سازی", body: "ساخت گردش‌کار n8n و اتصال ابزارها با API و وب‌هوک." },
+      { icon: "activity", title: "عملیات عامل‌ها", body: "پایش اجراها، بررسی لاگ و کیفیت خروجی، تنظیم پرامپت و مدل و کنترل هزینه." },
+      { icon: "message", title: "تحویل و ارتباط", body: "تعیین محدوده، نوشتن پیشنهاد و گزارش مکتوب به شما." },
     ],
   },
   about: {
