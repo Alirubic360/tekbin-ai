@@ -6,14 +6,14 @@ const mailBrief = `mailto:${email}?subject=Project%20brief`;
 
 export const site = {
   name: "Tekbin AI",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://tekbin.ir",
+  url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://tekbin.ir").trim().replace(/\/+$/, ""),
   description:
     "Tekbin AI designs, builds and manages AI agents and n8n workflow automation for growing businesses.",
   email,
   // English site: written project brief (form link such as Tally/Google Forms, or mailto:).
-  briefUrl: process.env.NEXT_PUBLIC_BRIEF_URL || mailBrief,
+  briefUrl: (process.env.NEXT_PUBLIC_BRIEF_URL ?? "").trim() || mailBrief,
   // Persian site: consultation call booking (e.g. a Cal.com link).
-  bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL || mailBrief,
+  bookingUrl: (process.env.NEXT_PUBLIC_BOOKING_URL ?? "").trim() || mailBrief,
 };
 
 export function ctaHref(lang: Lang) {
