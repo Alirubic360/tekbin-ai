@@ -21,7 +21,7 @@ export default function PrivacyPage() {
       <section>
         <h2>Information we collect</h2>
         <ul>
-          <li><strong>Information you send us.</strong> If you email us or book a consultation, we receive details you provide, such as your name, email address, company and the project you describe.</li>
+          <li><strong>Information you send us.</strong> If you email us, book a consultation or submit the project brief form, we receive details you provide, such as your name, email address, company and the project you describe.</li>
           <li><strong>Payment data.</strong> If you pay in USDT, transaction details such as wallet addresses and amounts are recorded on a public blockchain. We cannot alter or delete them.</li>
           <li><strong>Technical data.</strong> Our hosting provider and any analytics tool we enable may process data such as IP address, browser type, device, pages viewed and referring page.</li>
         </ul>
@@ -41,7 +41,7 @@ export default function PrivacyPage() {
         <h2>Third-party services</h2>
         <p>
           We use third parties to operate the site and communicate with you, including a hosting provider,
-          a scheduling tool for bookings and an email provider. These providers process data under their own
+          a scheduling tool for bookings, an email provider and a form-processing service that delivers project briefs to us. These providers process data under their own
           privacy policies. If we enable analytics, we will update this page.
         </p>
       </section>

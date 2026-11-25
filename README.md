@@ -20,7 +20,8 @@ Site-wide values live in `lib/site.ts`. Set these environment variables (see `.e
 | Variable | Purpose |
 | --- | --- |
 | `NEXT_PUBLIC_SITE_URL` | Canonical site URL, used for metadata, sitemap and robots |
-| `NEXT_PUBLIC_BRIEF_URL` | English site: where "Send Your Project Brief" points (a Tally/Google Form link, or a `mailto:` link) |
+| `NEXT_PUBLIC_WEB3FORMS_KEY` | Free public key from web3forms.com. With it, the on-site `/brief` form delivers briefs straight to your email. Without it, the form opens the visitor's email app with the brief pre-filled |
+| `NEXT_PUBLIC_BRIEF_URL` | Optional: send the English CTA to an external form instead of the on-site `/brief` page |
 | `NEXT_PUBLIC_BOOKING_URL` | Persian site: where "رزرو مشاوره" points (e.g. a Cal.com link) |
 
 The contact email is set in `lib/site.ts`.
@@ -29,7 +30,7 @@ The contact email is set in `lib/site.ts`.
 
 ```
 app/
-  (en)/                 English site: layout, home page, /privacy, /terms, 404
+  (en)/                 English site: layout, home page, /brief, /privacy, /terms, 404
   (fa)/fa/              Persian site (RTL): layout and home page
   opengraph-image.tsx   Generated Open Graph image (1200x630)
   robots.ts, sitemap.ts

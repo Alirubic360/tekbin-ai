@@ -10,8 +10,10 @@ export const site = {
   description:
     "Tekbin AI designs, builds and manages AI agents and n8n workflow automation for growing businesses.",
   email,
-  // English site: written project brief (form link such as Tally/Google Forms, or mailto:).
-  briefUrl: (process.env.NEXT_PUBLIC_BRIEF_URL ?? "").trim() || mailBrief,
+  // English site: the on-site project brief form. Override with an external form URL if needed.
+  briefUrl: (process.env.NEXT_PUBLIC_BRIEF_URL ?? "").trim() || "/brief",
+  // Web3Forms public access key (free). Without it, the brief form falls back to the visitor's email app.
+  web3formsKey: (process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "").trim(),
   // Persian site: consultation call booking (e.g. a Cal.com link).
   bookingUrl: (process.env.NEXT_PUBLIC_BOOKING_URL ?? "").trim() || mailBrief,
 };
