@@ -5,11 +5,11 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: { default: `${site.name} — AI Agents & Automation`, template: `%s | ${site.name}` },
+  title: { default: `AI Agent Development & n8n Automation | ${site.name}`, template: `%s | ${site.name}` },
   description: site.description,
   alternates: { canonical: "/", languages: { en: "/", fa: "/fa", "x-default": "/" } },
   openGraph: {
-    title: `${site.name} — AI Agents & Automation`,
+    title: `AI Agent Development & n8n Automation | ${site.name}`,
     description: site.description,
     url: "/",
     siteName: site.name,

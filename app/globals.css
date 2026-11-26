@@ -28,3 +28,16 @@ html { scroll-behavior: smooth; background: var(--background); }
 [dir="rtl"] * {
   letter-spacing: 0 !important;
 }
+
+/* Above-the-fold entrance without JavaScript: the text is visible as soon as the HTML and CSS load (better LCP). */
+@keyframes hero-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+.hero-in {
+  animation: hero-in 0.45s cubic-bezier(0.21, 0.47, 0.32, 0.98) both;
+  animation-delay: var(--d, 0s);
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-in { animation: none; }
+}

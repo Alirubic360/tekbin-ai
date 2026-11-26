@@ -7,7 +7,7 @@ export const site = {
   name: "Tekbin AI",
   url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://tekbin.ir").trim().replace(/\/+$/, ""),
   description:
-    "Tekbin AI designs, builds and manages AI agents and n8n workflow automation for growing businesses.",
+    "Tekbin AI builds custom AI agents and n8n workflow automation for growing businesses, then monitors and manages them. Fixed scope and written proposals.",
   email,
   // English site: the on-site project brief form. Override with an external form URL if needed.
   briefUrl: (process.env.NEXT_PUBLIC_BRIEF_URL ?? "").trim() || "/brief",

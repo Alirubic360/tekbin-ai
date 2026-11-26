@@ -1,6 +1,5 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Reveal from "@/components/Reveal";
 import { ctaHref } from "@/lib/site";
 import type { Dict } from "@/lib/content";
 
@@ -11,23 +10,23 @@ export default function Hero({ t }: { t: Dict }) {
       <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/60 to-transparent" />
 
       <div className="relative mx-auto max-w-4xl">
-        <Reveal>
+        <div className="hero-in">
           <span className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70">
             <span className="h-1.5 w-1.5 rounded-full bg-accent" />
             {t.hero.badge}
           </span>
-        </Reveal>
-        <Reveal delay={0.08}>
+        </div>
+        <div className="hero-in" style={{ "--d": "0.04s" } as React.CSSProperties}>
           <h1 className="text-balance text-5xl font-semibold tracking-tight md:text-7xl">
             {t.hero.line1}
             <br />
             <span className="bg-gradient-to-r from-white to-accent bg-clip-text text-transparent">{t.hero.line2}</span>
           </h1>
-        </Reveal>
-        <Reveal delay={0.16}>
+        </div>
+        <div className="hero-in" style={{ "--d": "0.08s" } as React.CSSProperties}>
           <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-white/60 md:text-xl">{t.hero.body}</p>
-        </Reveal>
-        <Reveal delay={0.24} className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        </div>
+        <div className="hero-in mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row" style={{ "--d": "0.12s" } as React.CSSProperties}>
           <Button asChild size="lg">
             <a href={ctaHref(t.lang)}>
               {t.hero.cta} <ArrowRight size={18} className="rtl:rotate-180" />
@@ -36,7 +35,7 @@ export default function Hero({ t }: { t: Dict }) {
           <Button asChild size="lg" variant="outline">
             <a href="#services">{t.hero.secondary}</a>
           </Button>
-        </Reveal>
+        </div>
       </div>
     </section>
   );

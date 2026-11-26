@@ -7,7 +7,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "سیاست حریم خصوصی",
-  description: `نحوه‌ی گردآوری و استفاده از داده‌های شخصی توسط ${site.name}.`,
+  description: `نحوه‌ی گردآوری، استفاده و محافظت از داده‌های شخصی در وب‌سایت و پروژه‌های مشتریان ${site.name}، از جمله آمار بازدید و حقوق شما.`,
   alternates: { canonical: "/fa/privacy", languages: { en: "/privacy", fa: "/fa/privacy" } },
 };
 
