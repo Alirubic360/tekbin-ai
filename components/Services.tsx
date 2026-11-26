@@ -29,6 +29,7 @@ export default function Services({ t }: { t: Dict }) {
           );
         })}
       </div>
+      <p className="mt-6 text-sm"><a href={t.services.moreHref} className="text-[#4da3ff] underline underline-offset-2">{t.services.moreLabel}</a></p>
     </section>
   );
 }
