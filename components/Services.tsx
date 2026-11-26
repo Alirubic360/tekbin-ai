@@ -30,6 +30,11 @@ export default function Services({ t }: { t: Dict }) {
         })}
       </div>
       <p className="mt-6 text-sm"><a href={t.services.moreHref} className="text-[#4da3ff] underline underline-offset-2">{t.services.moreLabel}</a></p>
+      <ul className="mt-2 flex flex-wrap gap-x-6 gap-y-1 text-sm">
+        {t.services.related.map((r) => (
+          <li key={r.href}><a href={r.href} className="text-[#4da3ff] underline underline-offset-2">{r.label}</a></li>
+        ))}
+      </ul>
     </section>
   );
 }
