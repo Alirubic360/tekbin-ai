@@ -19,7 +19,7 @@ export type Dict = {
   lastUpdated: string;
   nav: { services: string; process: string; pricing: string; faq: string; cta: string };
   hero: { badge: string; line1: string; line2: string; body: string; cta: string; secondary: string };
-  services: { title: string; sub: string; items: { icon: "bot" | "workflow" | "plug" | "mail" | "chart"; title: string; body: string }[] };
+  services: { title: string; sub: string; moreLabel: string; moreHref: string; items: { icon: "bot" | "workflow" | "plug" | "mail" | "chart"; title: string; body: string }[] };
   ticker: string;
   tickerNote: string;
   process: { title: string; sub: string; steps: { title: string; body: string }[] };
@@ -47,6 +47,8 @@ export const en: Dict = {
   },
   services: {
     title: "What we build",
+    moreLabel: "AI agent development services: what we build, how, and what it costs",
+    moreHref: "/ai-agent-development",
     sub: "Custom AI agent development, n8n workflow automation and ongoing agent management. Small, focused systems, each built around a single outcome.",
     items: [
       { icon: "bot", title: "AI agent development", body: "One agent, one job, done well: lead qualification, support triage, research, CRM updates. Each agent gets its own tools, hard limits and a clean handoff to a person." },
@@ -133,6 +135,8 @@ export const fa: Dict = {
   },
   services: {
     title: "چه چیزی می‌سازیم",
+    moreLabel: "خدمات ساخت ایجنت هوش مصنوعی: چه می‌سازیم، چطور و با چه هزینه",
+    moreHref: "/fa/ai-agent-development",
     sub: "توسعه‌ی ایجنت هوش مصنوعی سفارشی، اتوماسیون گردش‌کار با n8n و مدیریت مداوم ایجنت‌ها. سیستم‌های کوچک و متمرکز، هر کدام برای یک نتیجه‌ی مشخص.",
     items: [
       { icon: "bot", title: "توسعه‌ی ایجنت هوش مصنوعی", body: "هر ایجنت یک کار را خوب انجام می‌دهد: ارزیابی سرنخ، دسته‌بندی تیکت‌های پشتیبانی، پژوهش، به‌روزرسانی CRM. هر کدام ابزار و محدودیت خودش را دارد و جایی که لازم باشد، کار را تمیز به یک آدم تحویل می‌دهد." },
