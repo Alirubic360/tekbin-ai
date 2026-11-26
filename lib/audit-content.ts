@@ -3,12 +3,8 @@ import type { Lang } from "@/lib/site";
 // Planning assumptions for the readiness estimate. They are rough ranges, shown to the visitor
 // as assumptions, never as measured results or promises.
 export const HOURS_MID = [2.5, 7.5, 15, 30, 50]; // hours per week, midpoint of each option
-export const SHARE: [number, number][] = [
-  [0.3, 0.6], // customer support
-  [0.4, 0.7], // data entry
-  [0.25, 0.5], // lead qualification
-  [0.2, 0.4], // other
-];
+export const TAKEOVER = 0.7; // planning assumption: share of that time an agent takes over
+export const WAGES = [25, 28, 20, 25]; // hourly benchmarks: Canada, Europe, UAE, other (editable by the visitor)
 export const WEEKS_PER_MONTH = 4.33;
 
 export type AuditDict = {
@@ -16,7 +12,10 @@ export type AuditDict = {
   badge: string;
   title: string;
   sub: string;
-  q: { bottleneck: string; hours: string; tools: string; contact: string };
+  q: { bottleneck: string; hours: string; tools: string; wage: string; contact: string };
+  countries: string[];
+  wageLabel: string;
+  costLine: string; // {yearly}
   bottlenecks: string[];
   hours: string[];
   tools: string[];
@@ -24,7 +23,7 @@ export type AuditDict = {
   back: string;
   step: string; // "Step {n} of {total}"
   resultTitle: string;
-  resultLine: string; // {low} {high} {total}
+  resultLine: string; // {total} {cost}
   assumptions: string;
   toolNotes: { standard: string; custom: string };
   contactIntro: string;
@@ -47,23 +46,27 @@ export const auditDicts: Record<Lang, AuditDict> = {
     lang: "en",
     badge: "Free estimate",
     title: "How much manual work could an agent take off your team?",
-    sub: "Three questions, a rough estimate on the spot, and an architecture note from an engineer if you want one. Nothing is stored in your browser.",
+    sub: "Four questions, a rough estimate on the spot, and an architecture note from an engineer if you want one. Nothing is stored in your browser.",
     q: {
       bottleneck: "Where does the manual work pile up?",
       hours: "About how many hours a week does your team spend on it?",
       tools: "Which tools does that work touch?",
+      wage: "Where is your team based, and what does an hour of that work cost you?",
       contact: "Want a written architecture note for your case?",
     },
     bottlenecks: ["Customer support", "Data entry", "Lead qualification", "Something else"],
+    countries: ["Canada", "Europe", "UAE", "Other"],
+    wageLabel: "Hourly cost, in USD or similar (you can edit it)",
+    costLine: "If an agent takes over about 70% of that time, the saving is roughly {yearly} a year.",
     hours: ["Under 5", "5–10", "10–20", "20–40", "40+"],
     tools: ["Email", "CRM", "Spreadsheets", "Custom or internal system"],
     next: "Next",
     back: "Back",
     step: "Step {n} of {total}",
     resultTitle: "Your rough estimate",
-    resultLine: "About {total} hours a month of manual work. Part of that, roughly {low}–{high} hours, is typically a candidate for automation.",
+    resultLine: "About {total} hours a month of manual work, roughly {cost} a month in staff time.",
     assumptions:
-      "This is a planning estimate, not a promise. It multiplies your weekly hours by a range we assume for this kind of work (30–60% for support, 40–70% for data entry, 25–50% for lead qualification, 20–40% for other). Real numbers depend on your data, tools and process, and the first call is where we check them.",
+      "This is a planning estimate, not a promise. It is weekly hours × 4.33 × hourly cost, with an assumed 70% of that time taken over by an agent. Country presets are rough benchmarks (Canada 25, Europe 28, UAE 20 per hour) and you can change them. Real results depend on your data, tools and process, and the first call is where we check them.",
     toolNotes: {
       standard: "Email, CRM and spreadsheets are normal integration points for the workflows we build.",
       custom: "A custom or internal system needs an API or webhook review first. That is the main thing we would check.",
@@ -86,23 +89,27 @@ export const auditDicts: Record<Lang, AuditDict> = {
     lang: "fa",
     badge: "برآورد رایگان",
     title: "یک ایجنت چقدر از کار دستی تیم شما را کم می‌کند؟",
-    sub: "سه سؤال، یک برآورد تقریبی همان لحظه، و اگر بخواهید یک یادداشت معماری از یک مهندس. چیزی در مرورگر شما ذخیره نمی‌شود.",
+    sub: "چهار سؤال، یک برآورد تقریبی همان لحظه، و اگر بخواهید یک یادداشت معماری از یک مهندس. چیزی در مرورگر شما ذخیره نمی‌شود.",
     q: {
       bottleneck: "کار دستی بیشتر کجا تلنبار می‌شود؟",
       hours: "تیم شما تقریباً هفته‌ای چند ساعت صرف آن می‌کند؟",
       tools: "این کار با کدام ابزارها سروکار دارد؟",
+      wage: "تیم شما کجاست و هر ساعت این کار چقدر برایتان هزینه دارد؟",
       contact: "یادداشت معماری مکتوب برای حالت خودتان می‌خواهید؟",
     },
     bottlenecks: ["پشتیبانی مشتری", "ورود داده", "غربال سرنخ فروش", "مورد دیگر"],
+    countries: ["کانادا", "اروپا", "امارات", "جای دیگر"],
+    wageLabel: "هزینه ساعتی، به دلار یا معادل آن (قابل ویرایش)",
+    costLine: "اگر ایجنت حدود ۷۰٪ از این زمان را بر عهده بگیرد، صرفه‌جویی تقریباً {yearly} در سال است.",
     hours: ["کمتر از ۵", "۵ تا ۱۰", "۱۰ تا ۲۰", "۲۰ تا ۴۰", "بیش از ۴۰"],
     tools: ["ایمیل", "CRM", "اکسل / جدول", "سیستم سفارشی یا داخلی"],
     next: "بعدی",
     back: "قبلی",
     step: "مرحله {n} از {total}",
     resultTitle: "برآورد تقریبی شما",
-    resultLine: "حدود {total} ساعت کار دستی در ماه. بخشی از آن، تقریباً {low} تا {high} ساعت، معمولاً کاندیدای اتوماسیون است.",
+    resultLine: "حدود {total} ساعت کار دستی در ماه، تقریباً {cost} در ماه هزینه نیروی انسانی.",
     assumptions:
-      "این یک برآورد برنامه‌ریزی است، نه تعهد. ساعت‌های هفتگی شما در بازه‌ای ضرب شده که برای این نوع کار فرض کرده‌ایم (پشتیبانی ۳۰ تا ۶۰٪، ورود داده ۴۰ تا ۷۰٪، غربال سرنخ ۲۵ تا ۵۰٪، موارد دیگر ۲۰ تا ۴۰٪). عدد واقعی به داده، ابزار و فرایند شما بستگی دارد و در همان گفتگوی اول بررسی‌اش می‌کنیم.",
+      "این یک برآورد برنامه‌ریزی است، نه تعهد. فرمول: ساعت هفتگی × ۴٫۳۳ × هزینه ساعتی، با این فرض که ایجنت ۷۰٪ از آن زمان را بر عهده می‌گیرد. مقدارهای پیش‌فرض کشورها تقریبی‌اند (کانادا ۲۵، اروپا ۲۸، امارات ۲۰ در ساعت) و قابل تغییرند. عدد واقعی به داده، ابزار و فرایند شما بستگی دارد و در همان گفتگوی اول بررسی‌اش می‌کنیم.",
     toolNotes: {
       standard: "ایمیل، CRM و جدول‌ها نقاط اتصال معمول در جریان‌هایی هستند که می‌سازیم.",
       custom: "سیستم سفارشی یا داخلی اول به بررسی API یا وب‌هوک نیاز دارد. مهم‌ترین چیزی که چک می‌کنیم همین است.",

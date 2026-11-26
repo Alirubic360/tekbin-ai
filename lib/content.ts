@@ -27,7 +27,7 @@ export type Dict = {
   faq: { title: string; items: { q: string; a: string }[] };
   team: { title: string; sub: string; roles: { icon: "bot" | "workflow" | "activity" | "message"; title: string; body: string }[] };
   about: { title: string; body: string; points: string[] };
-  footer: { rights: string; services: string; pricing: string; privacy: string; terms: string; contact: string; privacyHref: string; termsHref: string };
+  footer: { rights: string; services: string; pricing: string; privacy: string; terms: string; contact: string; privacyHref: string; termsHref: string; caseLabel: string; caseHref: string; payLabel: string; payHref: string };
 };
 
 export const en: Dict = {
@@ -88,6 +88,7 @@ export const en: Dict = {
       { q: "How do I pay?", a: "Prices are in USD and paid in USDT. We send an invoice with the amount and the network, and payments can be staged. USDT transfers can't be reversed, so we always agree scope and price in writing first." },
       { q: "How is the final price set?", a: "The prices on this page are starting points. After your brief we send a fixed scope and price in writing, and nothing starts until you approve it." },
       { q: "Do you guarantee results?", a: "No. Results depend on your data, tools and process, and anyone promising exact savings is guessing. What we do commit to: a clear scope, tested workflows and a documented handover." },
+      { q: "Is there a trial period?", a: "For scoped agent projects, yes: we can run the agent for 14 days in a test environment. If its error rate on the agreed test cases is not under 1%, you do not have to continue. The test cases and terms are agreed in writing before we start." },
       { q: "What does agent management include?", a: "We keep the agents we've built running well: watching runs and failures, reading logs, checking output quality, updating prompts, tools or models, and keeping usage costs visible. Scope and price are agreed in writing." },
       { q: "What happens when an automation fails?", a: "It shouldn't fail silently. We add retries, error handling and alerts, so a failure gets caught and routed to a person. For sensitive actions we can also require your approval before anything runs." },
       { q: "What happens to my data and accounts?", a: "We only ask for the access the project needs, ideally through limited accounts you can revoke at any time. What we can access and how we use it is agreed in writing. More in the Privacy Policy." },
@@ -110,7 +111,7 @@ export const en: Dict = {
     body: "Tekbin AI is a team of specialists in automation and AI agent management, led by someone with five years of hands-on experience. We build and run AI agents and workflow automation for small and growing businesses: clear scope, written agreements, tested handover.",
     points: ["Fixed scope and price, in writing", "Every workflow tested before handover", "Logging, error handling and human approval built in"],
   },
-  footer: { rights: "All rights reserved.", services: "Services", pricing: "Pricing", privacy: "Privacy", terms: "Terms", contact: "Contact", privacyHref: "/privacy", termsHref: "/terms" },
+  footer: { rights: "All rights reserved.", services: "Services", pricing: "Pricing", privacy: "Privacy", terms: "Terms", contact: "Contact", privacyHref: "/privacy", termsHref: "/terms", caseLabel: "Case study", caseHref: "/cases/real-estate-lead-agent", payLabel: "Pay with USDT", payHref: "/payments" },
 };
 
 export const fa: Dict = {
@@ -171,6 +172,7 @@ export const fa: Dict = {
       { q: "پرداخت چطور است؟", a: "قیمت‌ها به دلار است و پرداخت با USDT. فاکتوری با مبلغ و شبکه‌ی انتقال برایتان می‌فرستیم و پرداخت می‌تواند مرحله‌ای باشد. انتقال USDT برگشت‌پذیر نیست؛ برای همین، محدوده و قیمت را همیشه اول مکتوب توافق می‌کنیم." },
       { q: "قیمت نهایی چطور مشخص می‌شود؟", a: "قیمت‌های این صفحه نقطه‌ی شروع‌اند. بعد از مشاوره، محدوده و قیمت ثابت را مکتوب برایتان می‌فرستیم و تا تأیید شما کاری شروع نمی‌شود." },
       { q: "نتیجه تضمین دارد؟", a: "نه. نتیجه به داده، ابزار و فرایند شما بستگی دارد و هر کسی عدد دقیق صرفه‌جویی تضمین کند، دارد حدس می‌زند. چیزی که تعهد می‌دهیم: محدوده‌ی روشن، گردش‌کار آزمایش‌شده و تحویل مستند." },
+      { q: "دوره آزمایشی دارید؟", a: "برای پروژه‌های ایجنت با محدوده مشخص، بله: می‌توانیم ایجنت را ۱۴ روز در محیط تست اجرا کنیم. اگر نرخ خطای آن روی موارد تست توافق‌شده زیر ۱٪ نبود، لازم نیست ادامه دهید. موارد تست و شرایط قبل از شروع مکتوب توافق می‌شود." },
       { q: "مدیریت عامل‌ها شامل چه کارهایی است؟", a: "نگه‌داشتن عامل‌هایی که برایتان ساخته‌ایم: دیدن اجراها و خطاها، خواندن لاگ‌ها، سنجیدن کیفیت خروجی، به‌روزرسانی پرامپت و ابزار و مدل، و شفاف نگه‌داشتن هزینه‌ی مصرف. محدوده و قیمتش مکتوب توافق می‌شود." },
       { q: "اگر اتوماسیون خراب شود چه می‌شود؟", a: "نباید بی‌صدا خراب شود. تلاش مجدد، مدیریت خطا و هشدار می‌گذاریم تا خطا گرفته شود و به یک نفر برسد. برای کارهای حساس هم می‌شود تأیید شما را قبل از اجرا الزامی کرد." },
       { q: "داده‌ها و حساب‌های من چه می‌شود؟", a: "فقط به دسترسی‌ای نیاز داریم که پروژه لازم دارد، ترجیحاً از طریق حساب‌های محدودی که هر وقت خواستید لغو کنید. به چه چیزی دسترسی داریم و چطور استفاده می‌کنیم، مکتوب توافق می‌شود. جزئیات در سیاست حریم خصوصی هست." },
@@ -193,7 +195,7 @@ export const fa: Dict = {
     body: "Tekbin AI تیمی از متخصصان اتوماسیون و مدیریت عامل‌های هوش مصنوعی است، با رهبری کسی که پنج سال تجربه‌ی عملی در این کار دارد. برای کسب‌وکارهای کوچک و در حال رشد عامل هوش مصنوعی و اتوماسیون می‌سازیم و اجرا می‌کنیم؛ با محدوده‌ی روشن، توافق مکتوب و تحویل آزمایش‌شده.",
     points: ["محدوده و قیمت ثابت، مکتوب", "هر گردش‌کار قبل از تحویل آزمایش می‌شود", "لاگ، مدیریت خطا و تأیید انسانی از همان ابتدا"],
   },
-  footer: { rights: "همه‌ی حقوق محفوظ است.", services: "خدمات", pricing: "قیمت‌ها", privacy: "حریم خصوصی", terms: "شرایط استفاده", contact: "تماس", privacyHref: "/fa/privacy", termsHref: "/fa/terms" },
+  footer: { rights: "همه‌ی حقوق محفوظ است.", services: "خدمات", pricing: "قیمت‌ها", privacy: "حریم خصوصی", terms: "شرایط استفاده", contact: "تماس", privacyHref: "/fa/privacy", termsHref: "/fa/terms", caseLabel: "نمونه کار", caseHref: "/fa/cases/real-estate-lead-agent", payLabel: "پرداخت با USDT", payHref: "/fa/payments" },
 };
 
 export const dicts: Record<Lang, Dict> = { en, fa };

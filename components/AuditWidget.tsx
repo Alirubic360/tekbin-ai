@@ -5,7 +5,7 @@ import { Check, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { site } from "@/lib/site";
-import { HOURS_MID, SHARE, WEEKS_PER_MONTH, type AuditDict } from "@/lib/audit-content";
+import { HOURS_MID, TAKEOVER, WAGES, WEEKS_PER_MONTH, type AuditDict } from "@/lib/audit-content";
 
 const field =
   "w-full rounded-lg border border-white/10 bg-white/[0.03] px-3.5 py-2.5 text-sm text-white placeholder:text-white/55 transition-colors focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30";
@@ -30,22 +30,26 @@ function Choice({ checked, onClick, children, type }: { checked: boolean; onClic
 export default function AuditWidget({ t }: { t: AuditDict }) {
   const fa = t.lang === "fa";
   const nf = new Intl.NumberFormat(fa ? "fa-IR" : "en-US", { maximumFractionDigits: 0 });
-  const [step, setStep] = useState(0); // 0..2 questions, 3 result + contact
+  const [step, setStep] = useState(0); // 0..3 questions, 4 result + contact
   const [bottleneck, setBottleneck] = useState<number | null>(null);
   const [hours, setHours] = useState<number | null>(null);
   const [tools, setTools] = useState<number[]>([]);
+  const [country, setCountry] = useState<number | null>(null);
+  const [wage, setWage] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "mailto" | "error">("idle");
   const [replyTo, setReplyTo] = useState("");
 
-  const canNext = step === 0 ? bottleneck !== null : step === 1 ? hours !== null : tools.length > 0;
+  const wageNum = Number(wage);
+  const canNext = step === 0 ? bottleneck !== null : step === 1 ? hours !== null : step === 2 ? tools.length > 0 : wageNum > 0;
   const total = hours !== null ? HOURS_MID[hours] * WEEKS_PER_MONTH : 0;
-  const [lo, hi] = bottleneck !== null ? SHARE[bottleneck] : [0, 0];
-  const low = Math.round(total * lo);
-  const high = Math.round(total * hi);
+  const cost = total * (wageNum > 0 ? wageNum : 0);
+  const yearly = cost * 12 * TAKEOVER;
+  const rounded = (n: number) => nf.format(Math.round(n / 10) * 10);
+  const money = (n: number) => (fa ? `${rounded(n)} دلار` : `$${rounded(n)}`);
   const customSelected = tools.includes(3);
 
   function reset() {
-    setStep(0); setBottleneck(null); setHours(null); setTools([]); setStatus("idle");
+    setStep(0); setBottleneck(null); setHours(null); setTools([]); setCountry(null); setWage(""); setStatus("idle");
   }
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -59,7 +63,10 @@ export default function AuditWidget({ t }: { t: AuditDict }) {
       bottleneck: bottleneck !== null ? t.bottlenecks[bottleneck] : "",
       hours_per_week: hours !== null ? t.hours[hours] : "",
       tools: tools.map((i) => t.tools[i]).join(", "),
-      estimate_hours_per_month: `${low}-${high} of ${Math.round(total)}`,
+      hourly_cost: String(wageNum),
+      manual_hours_per_month: String(Math.round(total)),
+      est_monthly_cost: String(Math.round(cost)),
+      est_yearly_saving_at_70pct: String(Math.round(yearly)),
     };
     if (!site.web3formsKey) {
       const body = [`Name: ${name}`, `Email: ${email}`, ...Object.entries(summary).map(([k, v]) => `${k}: ${v}`)].join("\n");
@@ -100,14 +107,27 @@ export default function AuditWidget({ t }: { t: AuditDict }) {
             {(status === "done" ? t.successBody : t.mailtoBody).replaceAll("{email}", status === "done" ? replyTo : site.email)}
           </p>
         </div>
-      ) : step < 3 ? (
+      ) : step < 4 ? (
         <div>
           <p className="text-sm text-[#4da3ff]">
-            {t.step.replace("{n}", nf.format(step + 1)).replace("{total}", nf.format(3))}
+            {t.step.replace("{n}", nf.format(step + 1)).replace("{total}", nf.format(4))}
           </p>
           <h3 id="audit-q" className="mt-3 text-xl font-medium md:text-2xl">
-            {step === 0 ? t.q.bottleneck : step === 1 ? t.q.hours : t.q.tools}
+            {step === 0 ? t.q.bottleneck : step === 1 ? t.q.hours : step === 2 ? t.q.tools : t.q.wage}
           </h3>
+          {step === 3 ? (
+            <div className="mt-6 space-y-4">
+              <div role="radiogroup" aria-labelledby="audit-q" className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+                {t.countries.map((o, i) => (
+                  <Choice key={o} type="radio" checked={country === i} onClick={() => { setCountry(i); setWage(String(WAGES[i])); }}>{o}</Choice>
+                ))}
+              </div>
+              <div>
+                <label htmlFor="audit-wage" className="mb-1.5 block text-sm font-medium text-white/80">{t.wageLabel}</label>
+                <input id="audit-wage" inputMode="decimal" dir="ltr" value={wage} onChange={(e) => setWage(e.target.value.replace(/[^\d.]/g, ""))} className={field} placeholder="25" />
+              </div>
+            </div>
+          ) : (
           <div role={step === 2 ? "group" : "radiogroup"} aria-labelledby="audit-q" className="mt-6 grid gap-3 sm:grid-cols-2">
             {step === 0 && t.bottlenecks.map((o, i) => (
               <Choice key={o} type="radio" checked={bottleneck === i} onClick={() => setBottleneck(i)}>{o}</Choice>
@@ -119,6 +139,7 @@ export default function AuditWidget({ t }: { t: AuditDict }) {
               <Choice key={o} type="checkbox" checked={tools.includes(i)} onClick={() => setTools((c) => (c.includes(i) ? c.filter((x) => x !== i) : [...c, i]))}>{o}</Choice>
             ))}
           </div>
+          )}
           <div className="mt-8 flex items-center gap-3">
             {step > 0 && <Button type="button" variant="ghost" onClick={() => setStep(step - 1)}>{t.back}</Button>}
             <Button type="button" disabled={!canNext} onClick={() => setStep(step + 1)}>{t.next}</Button>
@@ -128,8 +149,9 @@ export default function AuditWidget({ t }: { t: AuditDict }) {
         <div>
           <h3 className="text-xl font-medium md:text-2xl">{t.resultTitle}</h3>
           <p className="mt-3 text-lg leading-relaxed text-white/90" aria-live="polite">
-            {t.resultLine.replace("{total}", nf.format(Math.round(total))).replace("{low}", nf.format(low)).replace("{high}", nf.format(high))}
+            {t.resultLine.replace("{total}", nf.format(Math.round(total))).replace("{cost}", money(cost))}
           </p>
+          <p className="mt-2 text-white/80">{t.costLine.replace("{yearly}", money(yearly))}</p>
           <p className="mt-3 text-sm leading-relaxed text-white/60">{customSelected ? t.toolNotes.custom : t.toolNotes.standard}</p>
           <p className="mt-3 text-xs leading-relaxed text-white/55">{t.assumptions}</p>
 
