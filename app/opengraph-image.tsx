@@ -24,12 +24,9 @@ export default function OpengraphImage() {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 16, fontSize: 34, fontWeight: 600 }}>
-          <svg width="48" height="48" viewBox="0 0 64 64">
-            <rect width="64" height="64" rx="14" fill="#0070f3" />
-            <path d="M18 22H46M32 22V44" stroke="#fff" strokeWidth="5" strokeLinecap="round" fill="none" />
-            <circle cx="18" cy="22" r="5.5" fill="#fff" />
-            <circle cx="46" cy="22" r="5.5" fill="#fff" />
-            <circle cx="32" cy="44" r="5.5" fill="#fff" />
+          <svg width="56" height="56" viewBox="0 0 64 64">
+            <rect x="0.5" y="0.5" width="63" height="63" rx="14" fill="#050505" stroke="rgba(255,255,255,0.25)" />
+            <g transform="translate(32 33) scale(.78) translate(-32 -36)"><path d="M10 22H54M32 22V52" stroke="#fff" strokeWidth="5.5" strokeLinecap="round" fill="none" /><circle cx="10" cy="22" r="6.5" fill="#fff" /><circle cx="54" cy="22" r="6.5" fill="#fff" /><circle cx="32" cy="52" r="6.5" fill="#fff" /><circle cx="32" cy="22" r="10" fill="#0070f3" /></g>
           </svg>
           Tekbin AI
         </div>

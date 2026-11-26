@@ -16,7 +16,7 @@ export default function Navbar({ t = en, switchHref }: { t?: Dict; switchHref?: 
     <header className="sticky top-0 z-50 border-b border-white/10 bg-background/60 backdrop-blur-xl">
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-6">
         <Link href={t.home} className="flex items-center gap-2 font-semibold tracking-tight">
-          <Logo />
+          <Logo size={28} />
           {site.name}
         </Link>
         <ul className="hidden items-center gap-8 text-sm text-white/60 md:flex">
