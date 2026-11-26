@@ -62,7 +62,12 @@ export const payEn: Page = {
   clauses: [
     { title: "1. Scope and price first", body: ["Nothing is invoiced until you have approved a written scope and a fixed price. USDT transfers cannot be reversed, so this order matters."] },
     { title: "2. We send an invoice", body: ["The invoice states the amount, the network and the wallet address, and it comes by email from {email}. Payments can be staged, for example 50% at the start and 50% after tested delivery."] },
-    { title: "3. Send on the exact network named", body: ["Use the network written on the invoice, exactly. Sending USDT on a different network can lose the funds. If you are unsure, send us a message first. Network fees are paid by the sender."] },
+    { title: "3. Send on the exact network named", body: ["Each invoice names one network. Use that one, exactly. We currently accept USDT on:"], list: [
+      "BNB Smart Chain (BEP-20)",
+      "Tron (TRC-20)",
+      "Other networks only by prior agreement, written on the invoice.",
+    ] },
+    { title: "Careful: some networks look alike", body: ["BNB Smart Chain and Ethereum addresses both start with 0x and look identical. Sending on the wrong one can lose the funds. Check the network name on the invoice, not just the address. Network fees are paid by the sender. If you are unsure, write to us before you send."] },
     { title: "4. Verify the address", body: ["Check the wallet address against the invoice we emailed. We never change payment details over chat or direct message. If anything looks different, email {email} before you send."] },
     { title: "5. Optional test transfer", body: ["For a first payment you can send a small test amount first, confirm with us that it arrived, then send the rest."] },
     { title: "6. Send us the transaction ID", body: ["After you send, reply with the transaction hash. We confirm receipt in writing and start the stage."] },
@@ -77,7 +82,12 @@ export const payFa: Page = {
   clauses: [
     { title: "۱. اول دامنه کار و قیمت", body: ["تا دامنه کار و قیمت ثابت را مکتوب تأیید نکرده باشید، فاکتوری صادر نمی‌شود. انتقال USDT برگشت‌پذیر نیست و به همین دلیل این ترتیب مهم است."] },
     { title: "۲. فاکتور می‌فرستیم", body: ["فاکتور مبلغ، شبکه و آدرس کیف پول را دارد و با ایمیل از {email} می‌رسد. پرداخت می‌تواند مرحله‌ای باشد، مثلاً ۵۰٪ در شروع و ۵۰٪ بعد از تحویل و تست."] },
-    { title: "۳. دقیقاً روی شبکه‌ای که نوشته‌ایم بفرستید", body: ["از همان شبکه‌ای استفاده کنید که روی فاکتور نوشته شده. ارسال USDT روی شبکه دیگر ممکن است باعث از دست رفتن پول شود. اگر مطمئن نیستید، اول پیام بدهید. کارمزد شبکه را فرستنده می‌دهد."] },
+    { title: "۳. دقیقاً روی شبکه‌ای که نوشته‌ایم بفرستید", body: ["هر فاکتور یک شبکه را نام می‌برد. دقیقاً از همان استفاده کنید. فعلاً USDT را روی این شبکه‌ها می‌پذیریم:"], list: [
+      "BNB Smart Chain (BEP-20)",
+      "Tron (TRC-20)",
+      "شبکه‌های دیگر فقط با توافق قبلی و با نوشتن روی فاکتور.",
+    ] },
+    { title: "دقت کنید: بعضی شبکه‌ها شبیه هم‌اند", body: ["آدرس BNB Smart Chain و Ethereum هر دو با 0x شروع می‌شود و شبیه هم است. ارسال روی شبکه اشتباه ممکن است باعث از دست رفتن پول شود. اسم شبکه روی فاکتور را بخوانید، نه فقط آدرس. کارمزد شبکه را فرستنده می‌دهد. اگر مطمئن نیستید، قبل از ارسال به ما بنویسید."] },
     { title: "۴. آدرس را تطبیق بدهید", body: ["آدرس کیف پول را با فاکتوری که ایمیل کرده‌ایم مقایسه کنید. ما اطلاعات پرداخت را هرگز از طریق چت یا پیام مستقیم تغییر نمی‌دهیم. اگر چیزی متفاوت بود، قبل از ارسال به {email} ایمیل بزنید."] },
     { title: "۵. تراکنش آزمایشی (اختیاری)", body: ["برای پرداخت اول می‌توانید ابتدا مبلغ کوچکی بفرستید، از رسیدنش با ما تأیید بگیرید و بعد بقیه را بفرستید."] },
     { title: "۶. شناسه تراکنش را بفرستید", body: ["بعد از ارسال، هش تراکنش را در پاسخ بفرستید. رسیدن پول را مکتوب تأیید می‌کنیم و مرحله را شروع می‌کنیم."] },
