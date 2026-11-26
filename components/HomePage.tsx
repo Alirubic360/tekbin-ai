@@ -7,6 +7,8 @@ import Pricing from "@/components/Pricing";
 import Faq from "@/components/Faq";
 import Team from "@/components/Team";
 import About from "@/components/About";
+import AuditSection from "@/components/AuditSection";
+import UnderTheHood from "@/components/UnderTheHood";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
 import { dicts } from "@/lib/content";
@@ -56,6 +58,8 @@ export default function HomePage({ lang }: { lang: Lang }) {
         <TechTicker t={t} />
         <Services t={t} />
         <Process t={t} />
+        <UnderTheHood lang={lang} />
+        <AuditSection lang={lang} />
         <Pricing t={t} />
         <Faq t={t} />
         <Team t={t} />

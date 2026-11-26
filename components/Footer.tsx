@@ -10,6 +10,8 @@ export default function Footer({ t = en }: { t?: Dict }) {
         <nav className="flex flex-wrap gap-x-6 gap-y-2">
           <a href={`${base}services`} className="hover:text-white">{t.footer.services}</a>
           <a href={`${base}pricing`} className="hover:text-white">{t.footer.pricing}</a>
+          <a href={t.footer.caseHref} className="hover:text-white">{t.footer.caseLabel}</a>
+          <a href={t.footer.payHref} className="hover:text-white">{t.footer.payLabel}</a>
           <a href={t.footer.privacyHref} className="hover:text-white">{t.footer.privacy}</a>
           <a href={t.footer.termsHref} className="hover:text-white">{t.footer.terms}</a>
           <a href={`mailto:${site.email}`} className="hover:text-white">{t.footer.contact}</a>
