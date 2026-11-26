@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ctaHref, site } from "@/lib/site";
 import { en, type Dict } from "@/lib/content";
+import Logo from "@/components/Logo";
 
 export default function Navbar({ t = en, switchHref }: { t?: Dict; switchHref?: string }) {
   const base = t.lang === "fa" ? "/fa#" : "/#";
@@ -15,7 +16,7 @@ export default function Navbar({ t = en, switchHref }: { t?: Dict; switchHref?: 
     <header className="sticky top-0 z-50 border-b border-white/10 bg-background/60 backdrop-blur-xl">
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-6">
         <Link href={t.home} className="flex items-center gap-2 font-semibold tracking-tight">
-          <span className="grid h-6 w-6 place-items-center rounded-md bg-accent text-xs font-bold">T</span>
+          <Logo size={28} />
           {site.name}
         </Link>
         <ul className="hidden items-center gap-8 text-sm text-white/60 md:flex">

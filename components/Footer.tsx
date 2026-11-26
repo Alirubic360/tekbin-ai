@@ -6,7 +6,10 @@ export default function Footer({ t = en }: { t?: Dict }) {
   return (
     <footer id="contact" className="border-t border-white/10 px-6 py-12">
       <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 text-sm text-white/50 md:flex-row md:items-center">
-        <p>© {new Date().getFullYear()} {site.name}. {t.footer.rights}</p>
+        <div>
+          <p className="font-medium text-white/80">{t.footer.tagline}</p>
+          <p className="mt-1">© {new Date().getFullYear()} {site.name}. {t.footer.rights}</p>
+        </div>
         <nav className="flex flex-wrap gap-x-6 gap-y-2">
           <a href={`${base}services`} className="hover:text-white">{t.footer.services}</a>
           <a href={`${base}pricing`} className="hover:text-white">{t.footer.pricing}</a>
