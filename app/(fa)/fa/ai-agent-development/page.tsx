@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <LegalPage t={fa} switchHref="/ai-agent-development" title={agentFa.h1} updated={SERVICE_UPDATED_FA}>
+    <LegalPage t={fa} switchHref="/ai-agent-development" crumb={{ name: agentFa.h1, path: "/fa/ai-agent-development" }} related={[{label: "خدمات اتوماسیون n8n", href: "/fa/n8n-automation-services"}, {label: "اتوماسیون هوش مصنوعی برای آژانس‌های املاک", href: "/fa/ai-automation-for-real-estate"}, {label: "نمونه کار: ایجنت غربال سرنخ املاک", href: "/fa/cases/real-estate-lead-agent"}]} title={agentFa.h1} updated={SERVICE_UPDATED_FA}>
       <LegalIntro text={agentFa.intro} />
       <LegalClauses clauses={agentFa.clauses} numbered={false} fa />
     </LegalPage>

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <LegalPage t={fa} switchHref="/cases/real-estate-lead-agent" title={caseFa.h1} updated={CASE_UPDATED_FA}>
+    <LegalPage t={fa} switchHref="/cases/real-estate-lead-agent" crumb={{ name: caseFa.h1, path: "/fa/cases/real-estate-lead-agent" }} title={caseFa.h1} updated={CASE_UPDATED_FA}>
       <LegalIntro text={caseFa.intro} />
       <LegalClauses clauses={caseFa.clauses} numbered={false} fa />
     </LegalPage>
