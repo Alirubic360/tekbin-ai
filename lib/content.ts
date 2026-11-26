@@ -47,7 +47,7 @@ export const en: Dict = {
   },
   services: {
     title: "What we build",
-    sub: "Small, focused systems. Each one built around a single outcome.",
+    sub: "Custom AI agent development, n8n workflow automation and ongoing agent management. Small, focused systems, each built around a single outcome.",
     items: [
       { icon: "bot", title: "AI agent development", body: "One agent, one job, done well: lead qualification, support triage, research, CRM updates. Each agent gets its own tools, hard limits and a clean handoff to a person." },
       { icon: "chart", title: "Agent management", body: "Agents drift over time. We read the logs, check the output, update prompts and models, and keep an eye on token spend so the bill never surprises you." },
@@ -92,6 +92,8 @@ export const en: Dict = {
       { q: "What does agent management include?", a: "We keep the agents we've built running well: watching runs and failures, reading logs, checking output quality, updating prompts, tools or models, and keeping usage costs visible. Scope and price are agreed in writing." },
       { q: "What happens when an automation fails?", a: "It shouldn't fail silently. We add retries, error handling and alerts, so a failure gets caught and routed to a person. For sensitive actions we can also require your approval before anything runs." },
       { q: "What happens to my data and accounts?", a: "We only ask for the access the project needs, ideally through limited accounts you can revoke at any time. What we can access and how we use it is agreed in writing. More in the Privacy Policy." },
+      { q: "What does an AI automation agency do?", a: "We find the repetitive, rule-based work in your business and replace it with AI agents and automated workflows: lead qualification, support triage, CRM updates, reporting. Then we monitor them so they keep working." },
+      { q: "How much does AI agent development cost?", a: "It depends on scope, integrations and how much human approval you want. Our plans start at $1,000 for a single-task agent or automation and $3,000 for a connected system. After your brief we send a fixed price in writing." },
       { q: "Do you use AI to do the work?", a: "Yes, like everyone building in this space. A person reviews and tests every workflow before we hand it over." },
       { q: "What if my project is bigger than Pro?", a: "Send the brief anyway. We'll quote it, or tell you straight if it's not a good fit." },
     ],
@@ -131,7 +133,7 @@ export const fa: Dict = {
   },
   services: {
     title: "چه چیزی می‌سازیم",
-    sub: "سیستم‌های کوچک و متمرکز؛ هر کدام برای یک نتیجه‌ی مشخص.",
+    sub: "توسعه‌ی ایجنت هوش مصنوعی سفارشی، اتوماسیون گردش‌کار با n8n و مدیریت مداوم ایجنت‌ها. سیستم‌های کوچک و متمرکز، هر کدام برای یک نتیجه‌ی مشخص.",
     items: [
       { icon: "bot", title: "توسعه‌ی ایجنت هوش مصنوعی", body: "هر ایجنت یک کار را خوب انجام می‌دهد: ارزیابی سرنخ، دسته‌بندی تیکت‌های پشتیبانی، پژوهش، به‌روزرسانی CRM. هر کدام ابزار و محدودیت خودش را دارد و جایی که لازم باشد، کار را تمیز به یک آدم تحویل می‌دهد." },
       { icon: "chart", title: "مدیریت ایجنت‌ها (Agent Management)", body: "ایجنت‌ها با گذر زمان افت می‌کنند. اجراها و لاگ‌ها را می‌بینیم، کیفیت خروجی را می‌سنجیم، پرامپت و مدل را به‌روز می‌کنیم و هزینه‌ی توکن را جلوی چشم نگه می‌داریم تا غافلگیر نشوید." },
@@ -176,6 +178,8 @@ export const fa: Dict = {
       { q: "مدیریت ایجنت‌ها شامل چه کارهایی است؟", a: "نگه‌داشتن ایجنت‌هایی که برایتان ساخته‌ایم: دیدن اجراها و خطاها، خواندن لاگ‌ها، سنجیدن کیفیت خروجی، به‌روزرسانی پرامپت و ابزار و مدل، و شفاف نگه‌داشتن هزینه‌ی مصرف. محدوده و قیمتش مکتوب توافق می‌شود." },
       { q: "اگر اتوماسیون خراب شود چه می‌شود؟", a: "نباید بی‌صدا خراب شود. تلاش مجدد، مدیریت خطا و هشدار می‌گذاریم تا خطا گرفته شود و به یک نفر برسد. برای کارهای حساس هم می‌شود تأیید شما را قبل از اجرا الزامی کرد." },
       { q: "داده‌ها و حساب‌های من چه می‌شود؟", a: "فقط به دسترسی‌ای نیاز داریم که پروژه لازم دارد، ترجیحاً از طریق حساب‌های محدودی که هر وقت خواستید لغو کنید. به چه چیزی دسترسی داریم و چطور استفاده می‌کنیم، مکتوب توافق می‌شود. جزئیات در سیاست حریم خصوصی هست." },
+      { q: "آژانس اتوماسیون هوش مصنوعی دقیقاً چه کار می‌کند؟", a: "کارهای تکراری و قاعده‌مند کسب‌وکار شما را پیدا می‌کنیم و با ایجنت هوش مصنوعی و گردش‌کار خودکار جایگزین می‌کنیم: غربال سرنخ، دسته‌بندی پشتیبانی، به‌روزرسانی CRM، گزارش‌گیری. بعد هم پایششان می‌کنیم تا درست کار کنند." },
+      { q: "هزینه‌ی ساخت ایجنت هوش مصنوعی چقدر است؟", a: "به محدوده کار، تعداد یکپارچه‌سازی‌ها و میزان تأیید انسانی بستگی دارد. پلن‌های ما از ۱٬۰۰۰ دلار برای یک ایجنت یا اتوماسیون تک‌وظیفه‌ای و ۳٬۰۰۰ دلار برای یک سیستم یکپارچه شروع می‌شود. بعد از توضیح پروژه، قیمت ثابت را مکتوب می‌فرستیم." },
       { q: "برای کار از هوش مصنوعی استفاده می‌کنید؟", a: "بله، مثل هر کسی که امروز در این حوزه کار می‌کند. هر گردش‌کار قبل از تحویل توسط یک آدم بررسی و تست می‌شود." },
       { q: "اگر پروژه‌ام از Pro بزرگ‌تر باشد؟", a: "باز هم توضیحش را بفرستید. قیمت می‌دهیم، یا اگر به درد هم نمی‌خوردیم، رک می‌گوییم." },
     ],

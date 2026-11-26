@@ -26,6 +26,7 @@ export default function HomePage({ lang }: { lang: Lang }) {
         name: site.name,
         url: site.url,
         email: site.email,
+        logo: `${site.url}/logo-512.png`,
         description: site.description,
       },
       {

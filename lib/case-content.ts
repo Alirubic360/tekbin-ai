@@ -7,7 +7,7 @@ type Page = { meta: { title: string; description: string }; h1: string; intro: s
 
 export const caseEn: Page = {
   meta: {
-    title: "Case study: a lead-qualifying agent for a real estate agency",
+    title: "Real estate lead agent: case study",
     description: "How we built an agent that answers and qualifies real estate leads around the clock, with validation before anything is sent.",
   },
   h1: "Case study: a lead-qualifying agent for a real estate agency",
@@ -32,7 +32,7 @@ export const caseEn: Page = {
 
 export const caseFa: Page = {
   meta: {
-    title: "نمونه کار: ایجنت غربال سرنخ برای یک آژانس املاک",
+    title: "نمونه کار: ایجنت غربال سرنخ املاک",
     description: "چطور ایجنتی ساختیم که شبانه‌روز به سرنخ‌های املاک جواب می‌دهد و قبل از ارسال هر پیام، خروجی‌اش را اعتبارسنجی می‌کند.",
   },
   h1: "نمونه کار: ایجنت غربال سرنخ برای یک آژانس املاک",

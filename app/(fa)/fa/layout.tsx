@@ -6,8 +6,8 @@ import "@fontsource/vazirmatn/700.css";
 import "../../globals.css";
 import { site } from "@/lib/site";
 
-const title = `${site.name} — عامل‌های هوش مصنوعی و اتوماسیون`;
-const description = "Tekbin AI برای کسب‌وکارهای در حال رشد عامل هوش مصنوعی و گردش‌کار n8n می‌سازد و اجرایشان را هم مدیریت می‌کند.";
+const title = `ساخت ایجنت هوش مصنوعی و اتوماسیون n8n | ${site.name}`;
+const description = "Tekbin AI برای کسب‌وکارهای در حال رشد ایجنت هوش مصنوعی و گردش‌کار n8n می‌سازد و بعد از تحویل، پایش و مدیریتشان را هم بر عهده می‌گیرد. محدوده و قیمت ثابت و مکتوب.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),

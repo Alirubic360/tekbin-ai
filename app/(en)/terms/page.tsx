@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
-  description: `Terms governing the ${site.name} website and services.`,
+  description: `Terms of Service for the ${site.name} website and its AI agent and automation services: scope, payment, intellectual property and liability.`,
   alternates: { canonical: "/terms", languages: { en: "/terms", fa: "/fa/terms" } },
 };
 

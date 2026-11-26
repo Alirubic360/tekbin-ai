@@ -1,0 +1,17 @@
+# Tekbin AI
+
+> Tekbin AI is an independent AI engineering and automation studio. We build custom AI agents and n8n workflow automation for small and growing businesses, then monitor and manage them. English and Persian.
+
+## Main pages
+- [Home](https://tekbin.ir/): services, process, pricing, FAQ
+- [Send a project brief](https://tekbin.ir/brief): how to start a project
+- [Case study: real estate lead agent](https://tekbin.ir/cases/real-estate-lead-agent): one project, how it works
+- [Paying with USDT](https://tekbin.ir/payments): accepted networks and how payment works
+- [Persian site](https://tekbin.ir/fa): same content in Persian
+
+## Policies
+- [Terms of Service](https://tekbin.ir/terms)
+- [Privacy Policy](https://tekbin.ir/privacy)
+
+## Contact
+hello@tekbin.ir

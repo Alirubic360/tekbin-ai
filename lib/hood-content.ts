@@ -6,6 +6,8 @@ export type HoodDict = {
   label: string; // "Illustrative reference design"
   nodes: { name: string; role: string }[];
   note: string;
+  caseLabel: string;
+  caseHref: string;
   points: { title: string; body: string }[];
 };
 
@@ -23,6 +25,8 @@ export const hoodDicts: Record<Lang, HoodDict> = {
       { name: "CRM update", role: "Writes the result" },
     ],
     note: "Failed validation never reaches the CRM. It goes to a person.",
+    caseLabel: "See how this works in a real estate agency project",
+    caseHref: "/cases/real-estate-lead-agent",
     points: [
       { title: "Validate before you write", body: "Model output is treated as untrusted input. It is checked against a schema and business rules before any system of record is touched." },
       { title: "A person for the risky parts", body: "Refunds, deletions and anything irreversible wait for human approval until you decide otherwise." },
@@ -42,6 +46,8 @@ export const hoodDicts: Record<Lang, HoodDict> = {
       { name: "به‌روزرسانی CRM", role: "نتیجه را می‌نویسد" },
     ],
     note: "خروجی ردشده هرگز به CRM نمی‌رسد؛ به یک آدم می‌رسد.",
+    caseLabel: "ببینید در یک پروژه آژانس املاک چطور کار می‌کند",
+    caseHref: "/fa/cases/real-estate-lead-agent",
     points: [
       { title: "اول اعتبارسنجی، بعد نوشتن", body: "خروجی مدل ورودی نامطمئن حساب می‌شود. قبل از دست‌زدن به هر سیستم اصلی، با طرح و قوانین کسب‌وکار چک می‌شود." },
       { title: "برای بخش‌های پرریسک، یک آدم", body: "بازپرداخت، حذف و هر کار برگشت‌ناپذیر تا وقتی خودتان تصمیم دیگری نگیرید منتظر تأیید انسان می‌ماند." },

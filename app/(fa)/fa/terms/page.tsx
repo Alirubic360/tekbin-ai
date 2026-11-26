@@ -7,7 +7,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "شرایط استفاده",
-  description: `شرایط استفاده از وب‌سایت و خدمات ${site.name}.`,
+  description: `شرایط استفاده از وب‌سایت و خدمات ایجنت هوش مصنوعی و اتوماسیون ${site.name}: محدوده کار، پرداخت، مالکیت فکری و مسئولیت.`,
   alternates: { canonical: "/fa/terms", languages: { en: "/terms", fa: "/fa/terms" } },
 };
 
