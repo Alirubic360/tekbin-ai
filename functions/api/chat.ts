@@ -13,6 +13,7 @@ export type Env = {
   LLM_MODEL?: string;
   LLM_API_KEY?: string;
   LLM_API_STYLE?: string; // "openai" (default) | "anthropic"
+  LLM_REASONING_EFFORT?: string; // optional, OpenAI-style only: none | low | medium | high (e.g. "none" for Gemini 2.5 Flash)
   ALLOWED_ORIGINS?: string; // comma-separated extra origins
   RATE_KV?: KV;
 };
@@ -66,13 +67,13 @@ async function callModel(env: Env, system: string, messages: Msg[], doFetch: typ
           method: "POST",
           signal: ctl.signal,
           headers: { "content-type": "application/json", "x-api-key": env.LLM_API_KEY as string, "anthropic-version": "2023-06-01" },
-          body: JSON.stringify({ model: env.LLM_MODEL, system, messages, max_tokens: 500, temperature: 0.2 }),
+          body: JSON.stringify({ model: env.LLM_MODEL, system, messages, max_tokens: 900, temperature: 0.2 }),
         })
       : await doFetch(`${base}/chat/completions`, {
           method: "POST",
           signal: ctl.signal,
           headers: { "content-type": "application/json", authorization: `Bearer ${env.LLM_API_KEY}` },
-          body: JSON.stringify({ model: env.LLM_MODEL, messages: [{ role: "system", content: system }, ...messages], max_tokens: 500, temperature: 0.2 }),
+          body: JSON.stringify({ model: env.LLM_MODEL, messages: [{ role: "system", content: system }, ...messages], max_tokens: 900, temperature: 0.2, ...(env.LLM_REASONING_EFFORT ? { reasoning_effort: env.LLM_REASONING_EFFORT } : {}) }),
         });
     if (!res.ok) return null;
     const data = (await res.json()) as { choices?: { message?: { content?: unknown } }[]; content?: { type?: string; text?: unknown }[] };

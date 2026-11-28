@@ -24,6 +24,7 @@ Cloudflare dashboard > Workers & Pages > your Pages project > Settings > Variabl
 | `LLM_API_KEY` | **Secret** | the provider's API key |
 | `LLM_MODEL` | Text | the model id your provider gives you |
 | `LLM_BASE_URL` | Text | `https://<provider>/v1` for OpenAI-compatible APIs, or the provider's base URL for the Anthropic Messages API (the code appends `/chat/completions` or `/v1/messages`). Must be `https://`. |
+| `LLM_REASONING_EFFORT` | Text, optional | `none` for Gemini 2.5 Flash (stops hidden "thinking" from using the token budget); omit for models that do not accept it |
 | `LLM_API_STYLE` | Text, optional | `openai` (default) or `anthropic` |
 | `ALLOWED_ORIGINS` | Text, optional | extra comma-separated origins allowed to call the API |
 
@@ -31,9 +32,13 @@ Then redeploy. Never put the key in the repository, in `NEXT_PUBLIC_*` variables
 
 Optional: bind a KV namespace named `RATE_KV` (Settings > Bindings) so the per-IP limit (20 requests / 10 min) is shared across Cloudflare locations. Without it the limit is per isolate, which is weaker.
 
+### Google Gemini (AI Studio key)
+
+`LLM_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai`, `LLM_MODEL=<a Flash model listed in AI Studio, e.g. gemini-2.5-flash>`, `LLM_REASONING_EFFORT=none`, key from https://aistudio.google.com/api-keys. Check Google's terms for the key's tier: on free tiers, prompts may be used to improve Google's products, so use a paid (billing-enabled) project before real visitors type business details.
+
 ## Safeguards (all tested)
 
-Same-origin check; body, history (last 6 turns) and per-message (600 chars) caps; per-IP rate limit; `max_tokens` 500; 20 s timeout; no message content is logged. Replies are rejected if they contain links other than this site's pages, emails other than `hello@tekbin.ir`, numbers not present in the retrieved documents or the user's message, promises or guarantees, a suggestion to consult an expert, or the wrong language.
+Same-origin check; body, history (last 6 turns) and per-message (600 chars) caps; per-IP rate limit; `max_tokens` 900; 20 s timeout; no message content is logged. Replies are rejected if they contain links other than this site's pages, emails other than `hello@tekbin.ir`, numbers not present in the retrieved documents or the user's message, promises or guarantees, a suggestion to consult an expert, or the wrong language.
 
 ## What has not been verified
 
