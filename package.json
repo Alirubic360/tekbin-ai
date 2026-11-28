@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build && cp scripts/404.html out/404.html",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test:checkup": "node --experimental-strip-types scripts/checkup-parity.mjs"
   },
   "dependencies": {
     "@fontsource/vazirmatn": "^5.3.0",
