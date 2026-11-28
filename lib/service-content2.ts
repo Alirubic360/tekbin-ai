@@ -8,7 +8,7 @@ export const n8nEn: Page = {
     description: "n8n workflow automation for growing businesses: integrations, retries, error alerts and human approval, built and monitored by a small engineering team.",
   },
   h1: "n8n automation services",
-  intro: "n8n is an open-source workflow automation tool. We use it to connect your CRM, inbox, calendar, databases and AI models into workflows that run on their own, and we build them so that failures are caught instead of hidden.",
+  intro: "n8n is a workflow automation tool that can be self-hosted. We use it to connect your CRM, inbox, calendar, databases and AI models into workflows that run on their own, and we build them so that failures are caught instead of hidden.",
   clauses: [
     { title: "What we build with n8n", list: [
       "Lead capture and routing: forms, WhatsApp and email into your CRM, with the right owner assigned.",
@@ -41,7 +41,7 @@ export const n8nFa: Page = {
     description: "اتوماسیون گردش‌کار با n8n برای کسب‌وکارهای در حال رشد: یکپارچه‌سازی، تلاش مجدد، هشدار خطا و تأیید انسانی، با ساخت و پایش توسط یک تیم مهندسی کوچک.",
   },
   h1: "خدمات اتوماسیون n8n",
-  intro: "n8n یک ابزار متن‌باز اتوماسیون گردش‌کار است. با آن CRM، ایمیل، تقویم، پایگاه‌داده و مدل‌های هوش مصنوعی شما را به هم وصل می‌کنیم تا خودکار کار کنند، و طوری می‌سازیم که خطا گرفته شود و پنهان نماند.",
+  intro: "n8n یک ابزار اتوماسیون گردش‌کار است که می‌شود آن را روی سرور خودتان میزبانی کرد. با آن CRM، ایمیل، تقویم، پایگاه‌داده و مدل‌های هوش مصنوعی شما را به هم وصل می‌کنیم تا خودکار کار کنند، و طوری می‌سازیم که خطا گرفته شود و پنهان نماند.",
   clauses: [
     { title: "با n8n چه می‌سازیم", list: [
       "دریافت و مسیریابی سرنخ: فرم، واتس‌اپ و ایمیل به CRM، با تعیین مسئول مناسب.",

@@ -6,6 +6,7 @@
 - [Home](https://tekbin.ir/): services, process, pricing, FAQ
 - [Send a project brief](https://tekbin.ir/brief): how to start a project
 - [Case study: real estate lead agent](https://tekbin.ir/cases/real-estate-lead-agent): one project, how it works
+- [Assistant: ask questions about services, pricing, process, security](https://tekbin.ir/assistant)
 - [Paying with USDT](https://tekbin.ir/payments): accepted networks and how payment works
 - [Persian site](https://tekbin.ir/fa): same content in Persian
 
