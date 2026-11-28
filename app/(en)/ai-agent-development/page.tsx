@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <LegalPage switchHref="/fa/ai-agent-development" crumb={{ name: agentEn.h1, path: "/ai-agent-development" }} related={[{label: "n8n automation services", href: "/n8n-automation-services"}, {label: "AI automation for real estate agencies", href: "/ai-automation-for-real-estate"}, {label: "Case study: real estate lead agent", href: "/cases/real-estate-lead-agent"}]} title={agentEn.h1} updated={SERVICE_UPDATED_EN}>
+    <LegalPage switchHref="/fa/ai-agent-development" crumb={{ name: agentEn.h1, path: "/ai-agent-development" }} related={[{ label: "Live demo: try the lead-qualifying agent", href: "/agent-demo" }, {label: "n8n automation services", href: "/n8n-automation-services"}, {label: "AI automation for real estate agencies", href: "/ai-automation-for-real-estate"}, {label: "Case study: real estate lead agent", href: "/cases/real-estate-lead-agent"}]} title={agentEn.h1} updated={SERVICE_UPDATED_EN}>
       <LegalIntro text={agentEn.intro} />
       <LegalClauses clauses={agentEn.clauses} numbered={false} />
     </LegalPage>
