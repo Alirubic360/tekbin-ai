@@ -61,6 +61,7 @@ export default function AgentDemoPage({ lang }: { lang: Lang }) {
             <span className="mt-1 block text-xs text-white/55">{t.links.workflowNote}</span>
           </p>
           <p><a className="text-[#4da3ff] underline underline-offset-2" href={`${pre}/lead-checkup`}>{t.links.checkup}</a></p>
+          <p><a className="text-[#4da3ff] underline underline-offset-2" href={`${pre}/assistant`}>{lang === "fa" ? "از دستیار Tekbin بپرسید" : "Ask the Tekbin assistant"}</a></p>
           <p><a className="text-[#4da3ff] underline underline-offset-2" href={ctaHref(lang)}>{t.links.brief}</a></p>
         </nav>
       </main>
