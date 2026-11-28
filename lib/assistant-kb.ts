@@ -175,7 +175,7 @@ export const KB: Entry[] = [
   {
     id: "hallucination",
     kw: {
-      en: ["hallucination", "hallucinate", "wrong answer", "make things up", "accuracy", "accurate", "mistakes", "wrong information", "trust the ai", "ai errors", "validation", "validator"],
+      en: ["hallucination", "hallucinate", "wrong answer", "make things up", "making things up", "made up", "makes things up", "invent", "fabricate", "stop the ai", "accuracy", "accurate", "mistakes", "wrong information", "trust the ai", "ai errors", "validation", "validator"],
       fa: ["توهم", "اشتباه", "غلط", "دقت", "جواب اشتباه", "مدل اشتباه", "اعتبارسنجی", "از خودش می سازد", "خطای هوش مصنوعی", "چطور مطمئن"],
     },
     q: { en: "How do you stop the AI from giving wrong answers or making things up?", fa: "چطور جلوی جواب اشتباه یا ساختگی هوش مصنوعی را می‌گیرید؟" },

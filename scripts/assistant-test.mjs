@@ -41,7 +41,7 @@ const Q = [
   ["Do you give a discount for the first clients?", "pricing"], ["can I pay with USDT?", "payment"], ["پرداخت با تتر چطوره", "payment"], ["which network BEP-20 or TRC-20", "payment"],
   ["Do you guarantee results?", "guarantee"], ["نتیجه تضمین دارد؟", "guarantee"], ["Is there a free trial?", "trial"], ["دوره آزمایشی دارید؟", "trial"],
   ["What if the automation fails?", "reliability"], ["اگر اتوماسیون خراب بشه چی میشه", "reliability"], ["What about duplicate records on retry?", "reliability"],
-  ["How do you stop hallucinations?", "hallucination"], ["چطور جلوی جواب اشتباه هوش مصنوعی را می‌گیرید", "hallucination"],
+  ["How do you stop hallucinations?", "hallucination"], ["How do you stop the AI from making things up?", "hallucination"], ["Can the agent invent facts or fabricate links?", "hallucination"], ["چطور جلوی جواب اشتباه هوش مصنوعی را می‌گیرید", "hallucination"],
   ["Is prompt injection a risk?", "prompt-injection"], ["تزریق دستور چیست و چطور مقابله می کنید", "prompt-injection"],
   ["How does human approval work?", "human-approval"], ["تایید انسانی چطور کار میکند", "human-approval"],
   ["How do you handle my API keys and passwords?", "security-access"], ["دسترسی به رمز و حساب های من چطور است", "security-access"],
