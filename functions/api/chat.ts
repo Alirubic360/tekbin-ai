@@ -56,7 +56,7 @@ function configured(env: Env): boolean {
   return Boolean(env.LLM_API_KEY && env.LLM_MODEL && env.LLM_BASE_URL && /^https:\/\//.test(env.LLM_BASE_URL));
 }
 
-async function callModel(env: Env, system: string, messages: Msg[], doFetch: typeof fetch): Promise<string | null> {
+async function callModel(env: Env, system: string, messages: Msg[], doFetch: typeof fetch): Promise<{ text: string } | { err: string }> {
   const base = (env.LLM_BASE_URL as string).replace(/\/+$/, "");
   const anthropic = (env.LLM_API_STYLE ?? "").toLowerCase() === "anthropic";
   const ctl = new AbortController();
@@ -75,12 +75,12 @@ async function callModel(env: Env, system: string, messages: Msg[], doFetch: typ
           headers: { "content-type": "application/json", authorization: `Bearer ${env.LLM_API_KEY}` },
           body: JSON.stringify({ model: env.LLM_MODEL, messages: [{ role: "system", content: system }, ...messages], max_tokens: 900, temperature: 0.2, ...(env.LLM_REASONING_EFFORT ? { reasoning_effort: env.LLM_REASONING_EFFORT } : {}) }),
         });
-    if (!res.ok) return null;
+    if (!res.ok) return { err: `provider_${res.status}` };
     const data = (await res.json()) as { choices?: { message?: { content?: unknown } }[]; content?: { type?: string; text?: unknown }[] };
     const text = anthropic ? data.content?.find((c) => c.type === "text" || typeof c.text === "string")?.text : data.choices?.[0]?.message?.content;
-    return typeof text === "string" ? text.trim() : null;
-  } catch {
-    return null;
+    return typeof text === "string" && text.trim() ? { text: text.trim() } : { err: "provider_empty" };
+  } catch (e) {
+    return { err: (e as Error)?.name === "AbortError" ? "provider_timeout" : "provider_unreachable" };
   } finally {
     clearTimeout(timer);
   }
@@ -102,22 +102,24 @@ export async function handleChat(request: Request, env: Env, deps: Deps = {}): P
 
   const lang = detectLang(messages[messages.length - 1].content);
   const hits = retrieveFor(messages, lang);
-  const fallback = () => json(kbReply(messages, lang));
-  if (!configured(env)) return fallback();
+  const fallback = (why: string) => json(kbReply(messages, lang), 200, { "x-assistant-llm": why });
+  if (!configured(env)) return fallback("not_configured");
 
   const system = buildSystemPrompt(lang, hits);
   let convo: Msg[] = messages;
+  let why = "rejected";
   for (let attempt = 0; attempt < 2; attempt++) {
-    const text = await callModel(env, system, convo, doFetch);
-    if (text === null) break; // provider error or timeout: do not retry, answer from the docs
-    const check = validateReply(text, lang, hits, messages);
+    const out = await callModel(env, system, convo, doFetch);
+    if ("err" in out) { why = out.err; break; } // provider error or timeout: do not retry, answer from the docs
+    const check = validateReply(out.text, lang, hits, messages);
     if (check.ok) {
-      const reply: Reply = { text, sources: sourcesFor(hits, lang), followUps: followUpsFor(hits, lang), mode: "llm", lang };
-      return json(reply);
+      const reply: Reply = { text: out.text, sources: sourcesFor(hits, lang), followUps: followUpsFor(hits, lang), mode: "llm", lang };
+      return json(reply, 200, { "x-assistant-llm": "ok" });
     }
-    convo = [...messages, { role: "assistant", content: text.slice(0, 1200) }, { role: "user", content: retryNote(check.reasons, lang) }];
+    why = `rejected:${check.reasons.map((r) => r.split(":")[0]).join("+")}`;
+    convo = [...messages, { role: "assistant", content: out.text.slice(0, 1200) }, { role: "user", content: retryNote(check.reasons, lang) }];
   }
-  return fallback();
+  return fallback(why);
 }
 
 export const onRequest = (ctx: { request: Request; env: Env }) => handleChat(ctx.request, ctx.env);

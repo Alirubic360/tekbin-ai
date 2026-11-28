@@ -153,6 +153,7 @@ let n = 0;
 const flaky = async () => new Response(JSON.stringify({ choices: [{ message: { content: n++ === 0 ? "We guarantee 10x results. Ask a lawyer." : GOOD } }] }), { status: 200 });
 r = await handleChat(mk(q("How much does it cost?")), ENV, { fetch: flaky });
 j = await r.json();
+t("diag header ok", r.headers.get("x-assistant-llm") === "ok");
 t("invalid then valid -> llm after retry", j.mode === "llm" && j.text === GOOD && n === 2);
 // invalid twice -> kb fallback
 n = 0;
@@ -165,6 +166,7 @@ for (const [name, f] of [["500", async () => new Response("err", { status: 500 }
   r = await handleChat(mk(q("How much does it cost?")), ENV, { fetch: f });
   j = await r.json();
   t(`provider ${name} -> kb`, r.status === 200 && j.mode === "kb");
+  t(`provider ${name} diag`, /^provider_/.test(r.headers.get("x-assistant-llm") ?? ""), String(r.headers.get("x-assistant-llm")));
 }
 // persian
 r = await handleChat(mk(q("قیمت چقدر است؟")), ENV, { fetch: okOpenAI("پلن Starter از ۱٬۰۰۰ دلار شروع می‌شود و Pro از ۳٬۰۰۰ دلار.") });
