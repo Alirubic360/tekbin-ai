@@ -49,7 +49,7 @@ export const en: Dict = {
     title: "What we build",
     moreLabel: "AI agent development services: what we build, how, and what it costs",
     moreHref: "/ai-agent-development",
-    related: [{ label: "n8n automation services", href: "/n8n-automation-services" }, { label: "AI automation for real estate agencies", href: "/ai-automation-for-real-estate" }, { label: "Free lead-handling checkup for real estate agents", href: "/lead-checkup" }],
+    related: [{ label: "n8n automation services", href: "/n8n-automation-services" }, { label: "AI automation for real estate agencies", href: "/ai-automation-for-real-estate" }, { label: "Free lead-handling checkup for real estate agents", href: "/lead-checkup" }, { label: "Live demo: try the lead-qualifying agent", href: "/agent-demo" }],
     sub: "Custom AI agent development, n8n workflow automation and ongoing agent management. Small, focused systems, each built around a single outcome.",
     items: [
       { icon: "bot", title: "AI agent development", body: "One agent, one job, done well: lead qualification, support triage, research, CRM updates. Each agent gets its own tools, hard limits and a clean handoff to a person." },
@@ -138,7 +138,7 @@ export const fa: Dict = {
     title: "چه چیزی می‌سازیم",
     moreLabel: "خدمات ساخت ایجنت هوش مصنوعی: چه می‌سازیم، چطور و با چه هزینه",
     moreHref: "/fa/ai-agent-development",
-    related: [{ label: "خدمات اتوماسیون n8n", href: "/fa/n8n-automation-services" }, { label: "اتوماسیون هوش مصنوعی برای آژانس‌های املاک", href: "/fa/ai-automation-for-real-estate" }, { label: "چکاپ رایگان پاسخ‌گویی و پیگیری مشتری برای مشاوران املاک", href: "/fa/lead-checkup" }],
+    related: [{ label: "خدمات اتوماسیون n8n", href: "/fa/n8n-automation-services" }, { label: "اتوماسیون هوش مصنوعی برای آژانس‌های املاک", href: "/fa/ai-automation-for-real-estate" }, { label: "چکاپ رایگان پاسخ‌گویی و پیگیری مشتری برای مشاوران املاک", href: "/fa/lead-checkup" }, { label: "دموی زنده: ایجنت غربال سرنخ را امتحان کنید", href: "/fa/agent-demo" }],
     sub: "توسعه‌ی ایجنت هوش مصنوعی سفارشی، اتوماسیون گردش‌کار با n8n و مدیریت مداوم ایجنت‌ها. سیستم‌های کوچک و متمرکز، هر کدام برای یک نتیجه‌ی مشخص.",
     items: [
       { icon: "bot", title: "توسعه‌ی ایجنت هوش مصنوعی", body: "هر ایجنت یک کار را خوب انجام می‌دهد: ارزیابی سرنخ، دسته‌بندی تیکت‌های پشتیبانی، پژوهش، به‌روزرسانی CRM. هر کدام ابزار و محدودیت خودش را دارد و جایی که لازم باشد، کار را تمیز به یک آدم تحویل می‌دهد." },

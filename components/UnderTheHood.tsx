@@ -24,6 +24,7 @@ export default function UnderTheHood({ lang }: { lang: Lang }) {
       </ol>
       <p className="mt-4 text-sm text-white/70">{t.note}</p>
       <p className="mt-2 text-sm"><a href={t.caseHref} className="text-[#4da3ff] underline underline-offset-2">{t.caseLabel}</a></p>
+      <p className="mt-1 text-sm"><a href={t.demoHref} className="text-[#4da3ff] underline underline-offset-2">{t.demoLabel}</a></p>
       <div className="mt-10 grid gap-4 md:grid-cols-3">
         {t.points.map((p) => (
           <div key={p.title} className="glass-card p-6">
