@@ -136,7 +136,7 @@ j = await r.json();
 t("openai style llm ok", j.mode === "llm" && j.text === GOOD && j.sources.length > 0 && j.followUps.length > 0);
 t("openai url+auth", calls[0].url === "https://llm.example/v1/chat/completions" && calls[0].init.headers.authorization === "Bearer k-secret");
 const sent = JSON.parse(calls[0].init.body);
-t("openai body", sent.model === "m" && sent.messages[0].role === "system" && sent.max_tokens <= 500 && sent.messages.at(-1).content === "How much does it cost?");
+t("openai body", sent.model === "m" && sent.messages[0].role === "system" && sent.max_tokens <= 900 && !("reasoning_effort" in sent) && sent.messages.at(-1).content === "How much does it cost?");
 t("key never in response", !JSON.stringify(j).includes("k-secret") && !r.headers.get("x-api-key"));
 
 calls = [];
@@ -145,6 +145,9 @@ j = await r.json();
 t("anthropic style ok", j.mode === "llm" && calls[0].url === "https://api.llm.example/v1/messages" && calls[0].init.headers["x-api-key"] === "k-secret" && !!calls[0].init.headers["anthropic-version"]);
 t("anthropic system field", typeof JSON.parse(calls[0].init.body).system === "string" && JSON.parse(calls[0].init.body).messages.every((m) => m.role !== "system"));
 
+calls = [];
+await handleChat(mk(q("How much does it cost?")), { ...ENV, LLM_REASONING_EFFORT: "none" }, { fetch: spy(okOpenAI(GOOD)) });
+t("reasoning_effort passed when set", JSON.parse(calls[0].init.body).reasoning_effort === "none");
 // invalid output -> retry -> valid
 let n = 0;
 const flaky = async () => new Response(JSON.stringify({ choices: [{ message: { content: n++ === 0 ? "We guarantee 10x results. Ask a lawyer." : GOOD } }] }), { status: 200 });
