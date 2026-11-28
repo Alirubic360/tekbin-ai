@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <LegalPage t={fa} switchHref="/ai-automation-for-real-estate" crumb={{ name: reFa.h1, path: "/fa/ai-automation-for-real-estate" }} related={[{label: "نمونه کار: ایجنت غربال سرنخ املاک", href: "/fa/cases/real-estate-lead-agent"}, {label: "خدمات ساخت ایجنت هوش مصنوعی", href: "/fa/ai-agent-development"}, {label: "راهنمای پرداخت با USDT", href: "/fa/payments"}]} title={reFa.h1} updated={SERVICE_UPDATED_FA}>
+    <LegalPage t={fa} switchHref="/ai-automation-for-real-estate" crumb={{ name: reFa.h1, path: "/fa/ai-automation-for-real-estate" }} related={[{ label: "چکاپ رایگان پاسخ‌گویی و پیگیری مشتری", href: "/fa/lead-checkup" }, {label: "نمونه کار: ایجنت غربال سرنخ املاک", href: "/fa/cases/real-estate-lead-agent"}, {label: "خدمات ساخت ایجنت هوش مصنوعی", href: "/fa/ai-agent-development"}, {label: "راهنمای پرداخت با USDT", href: "/fa/payments"}]} title={reFa.h1} updated={SERVICE_UPDATED_FA}>
       <LegalIntro text={reFa.intro} />
       <LegalClauses clauses={reFa.clauses} numbered={false} fa />
     </LegalPage>
